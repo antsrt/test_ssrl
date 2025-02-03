@@ -1,0 +1,4 @@
+- ssrl.model_loss_horizon=1
+- wandb.entity=an-tsaritsin-itmo-university
+- wandb.log_ssrl=true
+- render_epoch_interval=10

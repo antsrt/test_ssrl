@@ -1,0 +1,7 @@
+[2025-01-31 16:18:53,713][jax._src.xla_bridge][INFO] - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-01-31 16:18:53,714][jax._src.xla_bridge][INFO] - Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+[2025-01-31 16:18:57,558][root][INFO] - Converting mesh (-8507549714612916826, -4517464656001134789) into convex hull.
+[2025-01-31 16:19:00,904][root][INFO] - Converting mesh (1624071946101598450, 5088957839001374138) into convex hull.
+[2025-01-31 16:19:01,271][root][INFO] - Converting mesh (4277913411913579978, -4818844421241311252) into convex hull.
+[2025-01-31 16:19:02,364][root][INFO] - Converting mesh (2564491898328231649, -1412881531423867058) into convex hull.
+[2025-01-31 16:19:03,261][root][INFO] - Converting mesh (-2238993143452408456, 1773168467233331996) into convex hull.

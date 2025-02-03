@@ -1,0 +1,338 @@
+run_name: null
+sweep_name: null
+env: Go1GoFast
+algo: ssrl
+gpus: '0'
+num_seeds: 1
+ssrl_dynamics_fn: contact_integrate_only
+render_during_training: true
+render_epoch_interval: 1
+render_seed: 0
+common:
+  action_repeat: 1
+  obs_history_length: 5
+  normalize_observations: false
+  forces_in_q_coords: true
+actor_network:
+  hidden_layers: 2
+  hidden_size: 512
+  activation: swish
+  max_std: null
+critic_network:
+  hidden_layers: 5
+  hidden_size: 256
+env_common:
+  policy_repeat: 4
+  forward_vel_rew_weight: 2.0
+  turn_rew_weight: 0.5
+  pitch_rew_weight: 0.25
+  roll_rew_weight: 0.25
+  yaw_rew_weight: 0.5
+  side_motion_rew_weight: 0.5
+  z_vel_change_rew_weight: 0.15
+  ang_vel_rew_weight: 0.0
+  ang_change_rew_weight: 0.25
+  joint_lim_rew_weight: 0.0
+  torque_lim_rew_weight: 0.0
+  joint_acc_rew_weight: 0.0
+  action_rew_weight: 0.0
+  cosmetic_rew_weight: 0.0
+  energy_rew_weight: 0.25
+  foot_z_rew_weight: 0.0
+  torque_lim_penalty_weight: 0.1
+  fallen_roll: 0.785
+  fallen_pitch: 0.785
+  include_height_in_obs: false
+  gains_in_action_space: false
+  reward_type: normalized
+env_sac:
+  policy_repeat: ${env_common.policy_repeat}
+  forward_cmd_vel_type: constant
+  forward_cmd_vel_range: 0.0
+  forward_cmd_vel_period_range:
+  - 40.0
+  - 40.0
+  turn_cmd_rate_range:
+  - -0.0
+  - 0.0
+  initial_yaw_range:
+  - -0.0
+  - 0.0
+  contact_time_const: 0.02
+  contact_damping_ratio: 1.0
+  friction_range:
+  - 0.6
+  - 0.6
+  ground_roll_range:
+  - 0.0
+  - 0.0
+  ground_pitch_range:
+  - 0.0
+  - 0.0
+  joint_damping_perc_range:
+  - 1.0
+  - 1.0
+  joint_gain_range:
+  - 1.0
+  - 1.0
+  link_mass_perc_range:
+  - 1.0
+  - 1.0
+  forward_vel_rew_weight: ${env_common.forward_vel_rew_weight}
+  turn_rew_weight: ${env_common.turn_rew_weight}
+  pitch_rew_weight: ${env_common.pitch_rew_weight}
+  roll_rew_weight: ${env_common.roll_rew_weight}
+  yaw_rew_weight: ${env_common.yaw_rew_weight}
+  side_motion_rew_weight: ${env_common.side_motion_rew_weight}
+  z_vel_change_rew_weight: ${env_common.z_vel_change_rew_weight}
+  ang_vel_rew_weight: ${env_common.ang_vel_rew_weight}
+  ang_change_rew_weight: ${env_common.ang_change_rew_weight}
+  joint_lim_rew_weight: ${env_common.joint_lim_rew_weight}
+  torque_lim_rew_weight: ${env_common.torque_lim_rew_weight}
+  joint_acc_rew_weight: ${env_common.joint_acc_rew_weight}
+  action_rew_weight: ${env_common.action_rew_weight}
+  cosmetic_rew_weight: ${env_common.cosmetic_rew_weight}
+  energy_rew_weight: ${env_common.energy_rew_weight}
+  foot_z_rew_weight: ${env_common.foot_z_rew_weight}
+  torque_lim_penalty_weight: ${env_common.torque_lim_penalty_weight}
+  fallen_roll: ${env_common.fallen_roll}
+  fallen_pitch: ${env_common.fallen_pitch}
+  forces_in_q_coords: ${common.forces_in_q_coords}
+  include_height_in_obs: ${env_common.include_height_in_obs}
+  gains_in_action_space: ${env_common.gains_in_action_space}
+  reward_type: ${env_common.reward_type}
+sac:
+  num_timesteps: 10000000
+  episode_length: 1000
+  action_repeat: ${common.action_repeat}
+  obs_history_length: ${common.obs_history_length}
+  num_envs: 1
+  num_eval_envs: 500
+  learning_rate: 0.0001
+  discounting: 0.99
+  seed: 0
+  batch_size: 200
+  num_evals: 10
+  normalize_observations: ${common.normalize_observations}
+  reward_scaling: 1
+  tau: 0.001
+  min_replay_size: 10000
+  max_replay_size: 200000
+  grad_updates_per_step: 20
+  deterministic_eval: true
+env_ssrl:
+  policy_repeat: ${env_common.policy_repeat}
+  forward_cmd_vel_type: constant
+  forward_cmd_vel_range: 0.0
+  forward_cmd_vel_period_range:
+  - 40.0
+  - 40.0
+  turn_cmd_rate_range:
+  - -0.0
+  - 0.0
+  initial_yaw_range:
+  - -0.0
+  - 0.0
+  contact_time_const: 0.02
+  contact_damping_ratio: 1.0
+  friction_range:
+  - 0.6
+  - 0.6
+  ground_roll_range:
+  - 0.0
+  - 0.0
+  ground_pitch_range:
+  - 0.0
+  - 0.0
+  joint_damping_perc_range:
+  - 1.0
+  - 1.0
+  joint_gain_range:
+  - 1.0
+  - 1.0
+  link_mass_perc_range:
+  - 1.0
+  - 1.0
+  forward_vel_rew_weight: ${env_common.forward_vel_rew_weight}
+  turn_rew_weight: ${env_common.turn_rew_weight}
+  pitch_rew_weight: ${env_common.pitch_rew_weight}
+  roll_rew_weight: ${env_common.roll_rew_weight}
+  yaw_rew_weight: ${env_common.yaw_rew_weight}
+  side_motion_rew_weight: ${env_common.side_motion_rew_weight}
+  z_vel_change_rew_weight: ${env_common.z_vel_change_rew_weight}
+  ang_vel_rew_weight: ${env_common.ang_vel_rew_weight}
+  ang_change_rew_weight: ${env_common.ang_change_rew_weight}
+  joint_lim_rew_weight: ${env_common.joint_lim_rew_weight}
+  torque_lim_rew_weight: ${env_common.torque_lim_rew_weight}
+  joint_acc_rew_weight: ${env_common.joint_acc_rew_weight}
+  action_rew_weight: ${env_common.action_rew_weight}
+  cosmetic_rew_weight: ${env_common.cosmetic_rew_weight}
+  energy_rew_weight: ${env_common.energy_rew_weight}
+  foot_z_rew_weight: ${env_common.foot_z_rew_weight}
+  torque_lim_penalty_weight: ${env_common.torque_lim_penalty_weight}
+  fallen_roll: ${env_common.fallen_roll}
+  fallen_pitch: ${env_common.fallen_pitch}
+  forces_in_q_coords: ${common.forces_in_q_coords}
+  include_height_in_obs: ${env_common.include_height_in_obs}
+  body_height_in_action_space: true
+  gains_in_action_space: ${env_common.gains_in_action_space}
+  reward_type: ${env_common.reward_type}
+  healthy_delta_radius: 2.0
+  healthy_delta_yaw: 1.57
+ssrl_start_with_sac: false
+ssrl:
+  episode_length: 1000
+  policy_repeat: 1
+  num_epochs: 40
+  model_trains_per_epoch: 1
+  training_steps_per_model_train: 1
+  env_steps_per_training_step: 1000
+  model_rollouts_per_hallucination_update: 400
+  sac_grad_updates_per_hallucination_update: 60
+  init_exploration_steps: 1000
+  clear_model_buffer_after_model_train: false
+  action_repeat: ${common.action_repeat}
+  obs_history_length: ${common.obs_history_length}
+  num_envs: 1
+  num_evals: 41
+  num_eval_envs: 1
+  policy_normalize_observations: ${common.normalize_observations}
+  model_learning_rate: 0.001
+  model_training_batch_size: 200
+  model_training_max_sgd_steps_per_epoch: null
+  model_training_max_epochs: 1000
+  model_training_convergence_criteria: 0.01
+  model_training_consec_converged_epochs: 6
+  model_training_abs_criteria: null
+  model_training_test_ratio: 0.2
+  model_training_weight_decay: true
+  model_training_stop_gradient: false
+  model_loss_horizon: 4
+  model_check_done_condition: true
+  max_env_buffer_size: 15000
+  max_model_buffer_size: 400000
+  sac_learning_rate: 0.0002
+  sac_discounting: 0.99
+  sac_batch_size: 256
+  real_ratio: 0.06
+  sac_reward_scaling: 1.0
+  sac_tau: 0.001
+  sac_fixed_alpha: None
+  seed: 2
+  deterministic_in_env: true
+  deterministic_eval: true
+  hallucination_max_std: -1.0
+  zero_final_layer_of_policy: false
+ssrl_model:
+  hidden_size: 400
+  ensemble_size: 7
+  num_elites: 5
+  probabilistic: true
+ssrl_linear_threshold_fn:
+  start_epoch: 0
+  end_epoch: 10
+  start_model_horizon: 1
+  end_model_horizon: 20
+ssrl_hupts_fn:
+  start_epoch: 0
+  end_epoch: 4
+  start_hupts: 10
+  end_hupts: 1000
+render:
+  policy: ssrl
+wandb:
+  entity: an-tsaritsin-itmo-university
+  log_sac: true
+  log_ssrl: true
+save_policy:
+  sac: true
+  sac_all: true
+  ssrl: true
+  ssrl_all: true
+torque_validate:
+  hardware_data: true
+Running on GPU 0
+[2025-01-31 17:04:28,466][root][INFO] - Converting mesh (-7238451416606789362, -8846797875853390772) into convex hull.
+[2025-01-31 17:04:31,485][root][INFO] - Converting mesh (-7311193000890084272, 7610363413794553695) into convex hull.
+[2025-01-31 17:04:31,837][root][INFO] - Converting mesh (3579153068461924000, 5063943926914246761) into convex hull.
+[2025-01-31 17:04:33,039][root][INFO] - Converting mesh (4019657426213652269, 3157056677830893921) into convex hull.
+[2025-01-31 17:04:33,993][root][INFO] - Converting mesh (4861237402708439972, 2990219532426170117) into convex hull.
+[2025-01-31 17:04:52,775][absl][INFO] - {'eval/walltime': 12.574731588363647, 'eval/episode_forward_vel': Array(-1678.56812497, dtype=float64), 'eval/episode_penalty_torque_lim': Array(-0.0753731, dtype=float64), 'eval/episode_rew_action': Array(0., dtype=float64), 'eval/episode_rew_ang_change': Array(53.60815592, dtype=float64), 'eval/episode_rew_ang_vel': Array(0., dtype=float64), 'eval/episode_rew_cosmetic': Array(0., dtype=float64), 'eval/episode_rew_energy': Array(13.27637341, dtype=float64), 'eval/episode_rew_foot_z': Array(0., dtype=float64), 'eval/episode_rew_forward_vel': Array(-721.96478494, dtype=float64), 'eval/episode_rew_joint_acc': Array(0., dtype=float64), 'eval/episode_rew_joint_limits': Array(0., dtype=float64), 'eval/episode_rew_pitch': Array(53.36149686, dtype=float64), 'eval/episode_rew_roll': Array(51.93569633, dtype=float64), 'eval/episode_rew_side_motion': Array(2.30745181, dtype=float64), 'eval/episode_rew_torque_limits': Array(0., dtype=float64), 'eval/episode_rew_turn': Array(106.94462159, dtype=float64), 'eval/episode_rew_yaw': Array(106.41955638, dtype=float64), 'eval/episode_rew_z_vel_change': Array(20.00593135, dtype=float64), 'eval/episode_reward': Array(-314.74743035, dtype=float64), 'eval/episode_step_count': Array(499500., dtype=float64), 'eval/avg_episode_length': Array(1000., dtype=float64), 'eval/epoch_eval_time': 12.574731588363647, 'eval/sps': 79.52456026380521}
+Steps / Eval:  0
+Reward is  -314.74743035338514
+Total reward is  -314.7474303532848
+[2025-01-31 17:05:41,902][absl][INFO] - env buffer size after init exploration 1000
+Exception ignored in: <function _xla_gc_callback at 0x73254ba23700>
+Traceback (most recent call last):
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lib/__init__.py", line 96, in _xla_gc_callback
+    def _xla_gc_callback(*args):
+KeyboardInterrupt:
+Model epoch 0: train total loss -3.3327568660702123, train mean loss 5.107401229896834e-06, test mean loss [4.07859178e-06 4.13498903e-06 4.14006335e-06 4.01975707e-06
+ 4.06145274e-06 4.37270467e-06 4.63676075e-06]
+Model epoch 1: train total loss -4.465664956201598, train mean loss 1.7483556004416443e-05, test mean loss [1.13936220e-04 1.02755204e-04 1.44745744e-04 4.44377861e-05
+ 8.42065718e-05 1.09177533e-04 1.02799202e-04]
+Model epoch 2: train total loss -14.159263028792187, train mean loss 0.00045320499950583684, test mean loss [6.48633830e-05 1.09702114e-03 3.89505951e-04 2.59136188e-04
+ 2.98972149e-04 6.70826952e-04 6.72968619e-04]
+Model epoch 3: train total loss 25.792329979703243, train mean loss 0.002592506107193908, test mean loss [0.00214469 0.00263946 0.00325575 0.00024344 0.00028678 0.00034683
+ 0.00015839]
+Model epoch 4: train total loss -38.61288724890859, train mean loss 0.006138917788318547, test mean loss [0.01057574 0.00021021 0.00484827 0.01366956 0.0105467  0.0023614
+ 0.01132972]
+Model epoch 5: train total loss -46.51360518302625, train mean loss 0.01030271149562635, test mean loss [1.26894607e-02 8.12133947e-05 8.62776681e-03 1.89454866e-02
+ 2.12995978e-02 3.30591722e-04 1.64531817e-02]
+Model epoch 6: train total loss -51.957601837003445, train mean loss 0.01494517474861302, test mean loss [0.01300518 0.00010161 0.01208409 0.02619631 0.03229004 0.00010874
+ 0.02041733]
+Model trained in 7 epochs with 1000 transitions.
+[2025-01-31 17:07:55,009][absl][INFO] - {'eval/walltime': 14.820257663726807, 'training/sps': 7.641932852375272, 'training/walltime': 130.85694670677185, 'training/model_train_time': 89.93033170700073, 'training/other_time': 40.10091590881348, 'training/model_horizon': 1, 'training/hallucination_updates_per_training_step': 10, 'training/env_buffer_size': Array(2000, dtype=int32), 'model/train_total_loss': Array(-51.95760184, dtype=float64, weak_type=True), 'model/train_mean_loss': Array(0.01494517, dtype=float64), 'model/test_total_loss': Array(-52.54507767, dtype=float64), 'model/test_mean_loss': Array(0.01488619, dtype=float64), 'model/train_epochs': 7, 'model/sec_per_epoch': 12.597699437822614, 'sac/actor_loss': Array(29.15651994, dtype=float64), 'sac/alpha': Array(0.9770506, dtype=float32), 'sac/alpha_loss': Array(6.99412612, dtype=float64), 'sac/buffer_current_size': Array(3600., dtype=float32), 'sac/critic_loss': Array(207.92087476, dtype=float64), 'eval/episode_forward_vel': Array(-3549.24236752, dtype=float64), 'eval/episode_penalty_torque_lim': Array(-1.85209637, dtype=float64), 'eval/episode_rew_action': Array(0., dtype=float64), 'eval/episode_rew_ang_change': Array(53.33259977, dtype=float64), 'eval/episode_rew_ang_vel': Array(0., dtype=float64), 'eval/episode_rew_cosmetic': Array(0., dtype=float64), 'eval/episode_rew_energy': Array(7.90464782, dtype=float64), 'eval/episode_rew_foot_z': Array(0., dtype=float64), 'eval/episode_rew_forward_vel': Array(-1526.555857, dtype=float64), 'eval/episode_rew_joint_acc': Array(0., dtype=float64), 'eval/episode_rew_joint_limits': Array(0., dtype=float64), 'eval/episode_rew_pitch': Array(52.79163727, dtype=float64), 'eval/episode_rew_roll': Array(53.01836337, dtype=float64), 'eval/episode_rew_side_motion': Array(11.37598208, dtype=float64), 'eval/episode_rew_torque_limits': Array(0., dtype=float64), 'eval/episode_rew_turn': Array(101.89208085, dtype=float64), 'eval/episode_rew_yaw': Array(107.05959277, dtype=float64), 'eval/episode_rew_z_vel_change': Array(19.93114721, dtype=float64), 'eval/episode_reward': Array(-1123.48857693, dtype=float64), 'eval/episode_step_count': Array(499500., dtype=float64), 'eval/avg_episode_length': Array(1000., dtype=float64), 'eval/epoch_eval_time': 2.245526075363159, 'eval/sps': 445.3299433800938}
+Steps / Eval:  2000.0
+Reward is  -1123.4885769332998
+Total reward is  -1123.4885769319735
+Model horizon updated to 2.
+Hallucination updates per training step updated to 257.
+SAC buffer resized to 205600 samples.
+Model epoch 0: train total loss -57.28273271720817, train mean loss 0.015711712228086188, test mean loss [3.72748003e-03 3.77740278e-05 1.95650017e-03 4.52687823e-02
+ 2.22216098e-02 2.96075277e-05 3.56527316e-02]
+Model epoch 1: train total loss -60.39594627658594, train mean loss 0.014138427251928029, test mean loss [8.18079937e-04 2.66500126e-04 6.96591714e-04 3.81922061e-02
+ 7.46795525e-03 4.01408141e-05 5.06535566e-02]
+Model epoch 2: train total loss -62.27248284915431, train mean loss 0.011161311669510985, test mean loss [1.59732958e-04 1.22261602e-04 1.50800823e-04 3.14181210e-02
+ 2.35456094e-03 8.63948130e-05 4.58080411e-02]
+Model epoch 3: train total loss -63.731348643921095, train mean loss 0.008225871887302866, test mean loss [1.30076271e-05 1.61804769e-05 2.20154429e-05 2.08007305e-02
+ 1.53907997e-03 6.97727234e-06 3.59904853e-02]
+Model epoch 4: train total loss -64.82928577166012, train mean loss 0.005976410753354027, test mean loss [1.01648195e-05 2.41433744e-05 5.25166085e-05 9.84658845e-03
+ 3.11680560e-04 2.00498970e-05 2.83589183e-02]
+Model epoch 5: train total loss -65.57685243300284, train mean loss 0.003591926213870355, test mean loss [7.93278537e-06 4.11707163e-05 6.76441105e-06 3.94023437e-03
+ 3.15957909e-05 5.30975954e-06 2.02881603e-02]
+Model epoch 6: train total loss -63.66575604042374, train mean loss 0.0022856106772113677, test mean loss [6.54209863e-06 4.70177130e-05 8.95902860e-06 1.44290668e-03
+ 1.43150457e-05 3.56487147e-04 1.30722365e-02]
+Model epoch 7: train total loss -65.53513097835182, train mean loss 0.0013542165300609945, test mean loss [4.41740851e-06 9.89761759e-05 6.62482910e-06 1.66673493e-03
+ 1.99845841e-05 1.59173515e-04 7.61238606e-03]
+Model epoch 8: train total loss -66.54908076345022, train mean loss 0.0007237573940498123, test mean loss [5.34547688e-06 2.91730491e-05 3.91377755e-06 7.35742904e-04
+ 6.68280596e-06 6.53244085e-05 3.88451506e-03]
+Traceback (most recent call last):
+  File "/home/ant/ssrl/ssrl/scripts/aliengo_train.py", line 248, in <module>
+    train_go1()
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/home/ant/ssrl/ssrl/scripts/aliengo_train.py", line 199, in train_go1
+    state = train_fn(
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/train.py", line 263, in train
+    env_state) = sim_training_epoch_with_timing(
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/train.py", line 947, in sim_training_epoch_with_timing
+    training_state, model_metrics = train_model(
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/train.py", line 661, in train_model
+    test_total_loss, test_mean_loss) = model_training_epoch(
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/train.py", line 745, in model_training_epoch
+    test_total_losses, test_mean_losses) = model_training_epoch_jit(
+  File "<string>", line 1, in <lambda>
+KeyboardInterrupt

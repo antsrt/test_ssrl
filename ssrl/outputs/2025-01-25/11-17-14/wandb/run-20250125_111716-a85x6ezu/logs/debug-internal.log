@@ -1,0 +1,49 @@
+2025-01-25 11:17:16,782 INFO    StreamThr :110502 [internal.py:wandb_internal():86] W&B internal server running at pid: 110502, started at: 2025-01-25 11:17:16.782121
+2025-01-25 11:17:16,783 DEBUG   HandlerThread:110502 [handler.py:handle_request():144] handle_request: status
+2025-01-25 11:17:16,787 INFO    WriterThread:110502 [datastore.py:open_for_write():85] open: /home/ant/ssrl/ssrl/outputs/2025-01-25/11-17-14/wandb/run-20250125_111716-a85x6ezu/run-a85x6ezu.wandb
+2025-01-25 11:17:16,787 DEBUG   SenderThread:110502 [sender.py:send():369] send: header
+2025-01-25 11:17:16,813 DEBUG   SenderThread:110502 [sender.py:send():369] send: run
+2025-01-25 11:17:17,306 ERROR   SenderThread:110502 [internal_api.py:execute():324] 404 response executing GraphQL.
+2025-01-25 11:17:17,306 ERROR   SenderThread:110502 [internal_api.py:execute():325] {"errors":[{"message":"entity your-wandb-org not found during upsertBucket","path":["upsertBucket"]}],"data":{"upsertBucket":null}}
+2025-01-25 11:17:17,306 ERROR   SenderThread:110502 [sender.py:send_run():955] It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 404: Not Found)
+Traceback (most recent call last):
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 321, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/wandb/sdk/lib/gql_request.py", line 56, in execute
+    request.raise_for_status()
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/wandb/sdk/internal/sender.py", line 953, in send_run
+    self._init_run(run, config_value_dict)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/wandb/sdk/internal/sender.py", line 991, in _init_run
+    server_run, inserted, server_messages = self._api.upsert_run(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/wandb/apis/normalize.py", line 73, in wrapper
+    raise err
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 1822, in upsert_run
+    response = self.gql(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 293, in gql
+    ret = self._retry_gql(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/wandb/sdk/lib/retry.py", line 147, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/wandb/util.py", line 946, in check_retry_fn
+    return fallback_retry_fn(e)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/wandb/util.py", line 888, in no_retry_auth
+    raise CommError(
+wandb.errors.CommError: It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 404: Not Found)
+2025-01-25 11:17:17,657 DEBUG   HandlerThread:110502 [handler.py:handle_request():144] handle_request: shutdown
+2025-01-25 11:17:17,657 INFO    HandlerThread:110502 [handler.py:finish():854] shutting down handler
+2025-01-25 11:17:17,813 INFO    WriterThread:110502 [datastore.py:close():298] close: /home/ant/ssrl/ssrl/outputs/2025-01-25/11-17-14/wandb/run-20250125_111716-a85x6ezu/run-a85x6ezu.wandb
+2025-01-25 11:17:18,307 INFO    SenderThread:110502 [sender.py:finish():1526] shutting down sender

@@ -1,0 +1,484 @@
+run_name: null
+sweep_name: null
+env: Go1GoFast
+algo: ssrl
+gpus: '0'
+num_seeds: 1
+ssrl_dynamics_fn: contact_integrate_only
+render_during_training: true
+render_epoch_interval: 1
+render_seed: 0
+common:
+  action_repeat: 1
+  obs_history_length: 5
+  normalize_observations: false
+  forces_in_q_coords: true
+actor_network:
+  hidden_layers: 2
+  hidden_size: 512
+  activation: swish
+  max_std: null
+critic_network:
+  hidden_layers: 5
+  hidden_size: 256
+env_common:
+  policy_repeat: 4
+  forward_vel_rew_weight: 2.0
+  turn_rew_weight: 0.5
+  pitch_rew_weight: 0.25
+  roll_rew_weight: 0.25
+  yaw_rew_weight: 0.5
+  side_motion_rew_weight: 0.5
+  z_vel_change_rew_weight: 0.15
+  ang_vel_rew_weight: 0.0
+  ang_change_rew_weight: 0.25
+  joint_lim_rew_weight: 0.0
+  torque_lim_rew_weight: 0.0
+  joint_acc_rew_weight: 0.0
+  action_rew_weight: 0.0
+  cosmetic_rew_weight: 0.0
+  energy_rew_weight: 0.25
+  foot_z_rew_weight: 0.0
+  torque_lim_penalty_weight: 0.1
+  fallen_roll: 0.785
+  fallen_pitch: 0.785
+  include_height_in_obs: false
+  gains_in_action_space: false
+  reward_type: normalized
+env_sac:
+  policy_repeat: ${env_common.policy_repeat}
+  forward_cmd_vel_type: constant
+  forward_cmd_vel_range: 0.0
+  forward_cmd_vel_period_range:
+  - 40.0
+  - 40.0
+  turn_cmd_rate_range:
+  - -0.0
+  - 0.0
+  initial_yaw_range:
+  - -0.0
+  - 0.0
+  contact_time_const: 0.02
+  contact_damping_ratio: 1.0
+  friction_range:
+  - 0.6
+  - 0.6
+  ground_roll_range:
+  - 0.0
+  - 0.0
+  ground_pitch_range:
+  - 0.0
+  - 0.0
+  joint_damping_perc_range:
+  - 1.0
+  - 1.0
+  joint_gain_range:
+  - 1.0
+  - 1.0
+  link_mass_perc_range:
+  - 1.0
+  - 1.0
+  forward_vel_rew_weight: ${env_common.forward_vel_rew_weight}
+  turn_rew_weight: ${env_common.turn_rew_weight}
+  pitch_rew_weight: ${env_common.pitch_rew_weight}
+  roll_rew_weight: ${env_common.roll_rew_weight}
+  yaw_rew_weight: ${env_common.yaw_rew_weight}
+  side_motion_rew_weight: ${env_common.side_motion_rew_weight}
+  z_vel_change_rew_weight: ${env_common.z_vel_change_rew_weight}
+  ang_vel_rew_weight: ${env_common.ang_vel_rew_weight}
+  ang_change_rew_weight: ${env_common.ang_change_rew_weight}
+  joint_lim_rew_weight: ${env_common.joint_lim_rew_weight}
+  torque_lim_rew_weight: ${env_common.torque_lim_rew_weight}
+  joint_acc_rew_weight: ${env_common.joint_acc_rew_weight}
+  action_rew_weight: ${env_common.action_rew_weight}
+  cosmetic_rew_weight: ${env_common.cosmetic_rew_weight}
+  energy_rew_weight: ${env_common.energy_rew_weight}
+  foot_z_rew_weight: ${env_common.foot_z_rew_weight}
+  torque_lim_penalty_weight: ${env_common.torque_lim_penalty_weight}
+  fallen_roll: ${env_common.fallen_roll}
+  fallen_pitch: ${env_common.fallen_pitch}
+  forces_in_q_coords: ${common.forces_in_q_coords}
+  include_height_in_obs: ${env_common.include_height_in_obs}
+  gains_in_action_space: ${env_common.gains_in_action_space}
+  reward_type: ${env_common.reward_type}
+sac:
+  num_timesteps: 10000000
+  episode_length: 1000
+  action_repeat: ${common.action_repeat}
+  obs_history_length: ${common.obs_history_length}
+  num_envs: 1
+  num_eval_envs: 500
+  learning_rate: 0.0001
+  discounting: 0.99
+  seed: 0
+  batch_size: 200
+  num_evals: 10
+  normalize_observations: ${common.normalize_observations}
+  reward_scaling: 1
+  tau: 0.001
+  min_replay_size: 10000
+  max_replay_size: 200000
+  grad_updates_per_step: 20
+  deterministic_eval: true
+env_ssrl:
+  policy_repeat: ${env_common.policy_repeat}
+  forward_cmd_vel_type: constant
+  forward_cmd_vel_range: 0.0
+  forward_cmd_vel_period_range:
+  - 40.0
+  - 40.0
+  turn_cmd_rate_range:
+  - -0.0
+  - 0.0
+  initial_yaw_range:
+  - -0.0
+  - 0.0
+  contact_time_const: 0.02
+  contact_damping_ratio: 1.0
+  friction_range:
+  - 0.6
+  - 0.6
+  ground_roll_range:
+  - 0.0
+  - 0.0
+  ground_pitch_range:
+  - 0.0
+  - 0.0
+  joint_damping_perc_range:
+  - 1.0
+  - 1.0
+  joint_gain_range:
+  - 1.0
+  - 1.0
+  link_mass_perc_range:
+  - 1.0
+  - 1.0
+  forward_vel_rew_weight: ${env_common.forward_vel_rew_weight}
+  turn_rew_weight: ${env_common.turn_rew_weight}
+  pitch_rew_weight: ${env_common.pitch_rew_weight}
+  roll_rew_weight: ${env_common.roll_rew_weight}
+  yaw_rew_weight: ${env_common.yaw_rew_weight}
+  side_motion_rew_weight: ${env_common.side_motion_rew_weight}
+  z_vel_change_rew_weight: ${env_common.z_vel_change_rew_weight}
+  ang_vel_rew_weight: ${env_common.ang_vel_rew_weight}
+  ang_change_rew_weight: ${env_common.ang_change_rew_weight}
+  joint_lim_rew_weight: ${env_common.joint_lim_rew_weight}
+  torque_lim_rew_weight: ${env_common.torque_lim_rew_weight}
+  joint_acc_rew_weight: ${env_common.joint_acc_rew_weight}
+  action_rew_weight: ${env_common.action_rew_weight}
+  cosmetic_rew_weight: ${env_common.cosmetic_rew_weight}
+  energy_rew_weight: ${env_common.energy_rew_weight}
+  foot_z_rew_weight: ${env_common.foot_z_rew_weight}
+  torque_lim_penalty_weight: ${env_common.torque_lim_penalty_weight}
+  fallen_roll: ${env_common.fallen_roll}
+  fallen_pitch: ${env_common.fallen_pitch}
+  forces_in_q_coords: ${common.forces_in_q_coords}
+  include_height_in_obs: ${env_common.include_height_in_obs}
+  body_height_in_action_space: true
+  gains_in_action_space: ${env_common.gains_in_action_space}
+  reward_type: ${env_common.reward_type}
+  healthy_delta_radius: 2.0
+  healthy_delta_yaw: 1.57
+ssrl_start_with_sac: false
+ssrl:
+  episode_length: 1000
+  policy_repeat: 1
+  num_epochs: 40
+  model_trains_per_epoch: 1
+  training_steps_per_model_train: 1
+  env_steps_per_training_step: 1000
+  model_rollouts_per_hallucination_update: 400
+  sac_grad_updates_per_hallucination_update: 60
+  init_exploration_steps: 1000
+  clear_model_buffer_after_model_train: false
+  action_repeat: ${common.action_repeat}
+  obs_history_length: ${common.obs_history_length}
+  num_envs: 1
+  num_evals: 41
+  num_eval_envs: 1
+  policy_normalize_observations: ${common.normalize_observations}
+  model_learning_rate: 0.001
+  model_training_batch_size: 200
+  model_training_max_sgd_steps_per_epoch: null
+  model_training_max_epochs: 1000
+  model_training_convergence_criteria: 0.01
+  model_training_consec_converged_epochs: 6
+  model_training_abs_criteria: null
+  model_training_test_ratio: 0.2
+  model_training_weight_decay: true
+  model_training_stop_gradient: false
+  model_loss_horizon: 4
+  model_check_done_condition: true
+  max_env_buffer_size: 15000
+  max_model_buffer_size: 400000
+  sac_learning_rate: 0.0002
+  sac_discounting: 0.99
+  sac_batch_size: 256
+  real_ratio: 0.06
+  sac_reward_scaling: 1.0
+  sac_tau: 0.001
+  sac_fixed_alpha: None
+  seed: 2
+  deterministic_in_env: true
+  deterministic_eval: true
+  hallucination_max_std: -1.0
+  zero_final_layer_of_policy: false
+ssrl_model:
+  hidden_size: 400
+  ensemble_size: 7
+  num_elites: 5
+  probabilistic: true
+ssrl_linear_threshold_fn:
+  start_epoch: 0
+  end_epoch: 10
+  start_model_horizon: 1
+  end_model_horizon: 20
+ssrl_hupts_fn:
+  start_epoch: 0
+  end_epoch: 4
+  start_hupts: 10
+  end_hupts: 1000
+render:
+  policy: ssrl
+wandb:
+  entity: an-tsaritsin-itmo-university
+  log_sac: true
+  log_ssrl: true
+save_policy:
+  sac: true
+  sac_all: true
+  ssrl: true
+  ssrl_all: true
+torque_validate:
+  hardware_data: true
+Running on GPU 0
+[2025-02-03 14:36:10,525][root][INFO] - Converting mesh (1358358237127849600, -1499252382352939367) into convex hull.
+[2025-02-03 14:36:13,936][root][INFO] - Converting mesh (-7711527237322999973, 5319049934848506400) into convex hull.
+[2025-02-03 14:36:14,314][root][INFO] - Converting mesh (5939223758002308314, -3304654578546660825) into convex hull.
+[2025-02-03 14:36:15,471][root][INFO] - Converting mesh (1504483361736033349, -5256130521221423769) into convex hull.
+[2025-02-03 14:36:16,337][root][INFO] - Converting mesh (-5974012300425908477, -6152268094984543287) into convex hull.
+[2025-02-03 14:37:18,201][absl][INFO] - {'eval/walltime': 55.23758101463318, 'eval/episode_forward_vel': Array(-292.44237371, dtype=float64), 'eval/episode_penalty_torque_lim': Array(-0.98203377, dtype=float64), 'eval/episode_rew_action': Array(0., dtype=float64), 'eval/episode_rew_ang_change': Array(53.06245483, dtype=float64), 'eval/episode_rew_ang_vel': Array(0., dtype=float64), 'eval/episode_rew_cosmetic': Array(0., dtype=float64), 'eval/episode_rew_energy': Array(0.07761423, dtype=float64), 'eval/episode_rew_foot_z': Array(0., dtype=float64), 'eval/episode_rew_forward_vel': Array(-125.78166611, dtype=float64), 'eval/episode_rew_joint_acc': Array(0., dtype=float64), 'eval/episode_rew_joint_limits': Array(0., dtype=float64), 'eval/episode_rew_pitch': Array(53.5165766, dtype=float64), 'eval/episode_rew_roll': Array(53.13361712, dtype=float64), 'eval/episode_rew_side_motion': Array(81.73355128, dtype=float64), 'eval/episode_rew_torque_limits': Array(0., dtype=float64), 'eval/episode_rew_turn': Array(58.03108412, dtype=float64), 'eval/episode_rew_yaw': Array(26.96959591, dtype=float64), 'eval/episode_rew_z_vel_change': Array(24.71800584, dtype=float64), 'eval/episode_reward': Array(224.6127862, dtype=float64), 'eval/episode_step_count': Array(499500., dtype=float64), 'eval/avg_episode_length': Array(1000., dtype=float64), 'eval/epoch_eval_time': 55.23758101463318, 'eval/sps': 18.10361680637475}
+Steps / Eval:  0
+Reward is  224.61278620093427
+Total reward is  224.59397201045047
+[2025-02-03 14:39:51,588][absl][INFO] - env buffer size after init exploration 1000
+Traceback (most recent call last):
+  File "/home/ant/ssrl/ssrl/scripts/aliengo_train.py", line 248, in <module>
+    train_go1()
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/home/ant/ssrl/ssrl/scripts/aliengo_train.py", line 199, in train_go1
+    state = train_fn(
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/train.py", line 263, in train
+    env_state) = sim_training_epoch_with_timing(
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/train.py", line 947, in sim_training_epoch_with_timing
+    training_state, model_metrics = train_model(
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/train.py", line 661, in train_model
+    test_total_loss, test_mean_loss) = model_training_epoch(
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/train.py", line 745, in model_training_epoch
+    test_total_losses, test_mean_losses) = model_training_epoch_jit(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/traceback_util.py", line 179, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/pjit.py", line 327, in cache_miss
+    outs, out_flat, out_tree, args_flat, jaxpr, attrs_tracked = _python_pjit_helper(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/pjit.py", line 175, in _python_pjit_helper
+    attrs_tracked) = _infer_params(jit_info, args, kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/pjit.py", line 627, in _infer_params
+    jaxpr, consts, out_shardings_flat, out_layouts_flat, attrs_tracked = _pjit_jaxpr(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/pjit.py", line 1275, in _pjit_jaxpr
+    jaxpr, final_consts, out_type, attrs_tracked = _create_pjit_jaxpr(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/linear_util.py", line 350, in memoized_fun
+    ans = call(fun, *args)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/pjit.py", line 1189, in _create_pjit_jaxpr
+    jaxpr, global_out_avals, consts, attrs_tracked = pe.trace_to_jaxpr_dynamic(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/profiler.py", line 335, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/interpreters/partial_eval.py", line 2347, in trace_to_jaxpr_dynamic
+    jaxpr, out_avals, consts, attrs_tracked = trace_to_subjaxpr_dynamic(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/interpreters/partial_eval.py", line 2370, in trace_to_subjaxpr_dynamic
+    ans = fun.call_wrapped(*in_tracers_)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/linear_util.py", line 192, in call_wrapped
+    ans = self.f(*args, **dict(self.params, **kwargs))
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/train.py", line 852, in model_training_epoch_jit
+    (train_total_losses, mean_losses)) = jax.lax.scan(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/traceback_util.py", line 179, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/loops.py", line 281, in scan
+    init_flat, carry_avals, carry_avals_out, init_tree, *rest = _create_jaxpr(init)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/loops.py", line 266, in _create_jaxpr
+    jaxpr, consts, out_tree, attrs_tracked = _initial_style_jaxpr_attrs(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/common.py", line 74, in _initial_style_jaxpr_attrs
+    jaxpr, consts, out_tree, attrs_tracked = _initial_style_open_jaxpr(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/common.py", line 60, in _initial_style_open_jaxpr
+    jaxpr, _, consts, attrs_tracked = pe.trace_to_jaxpr_dynamic(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/profiler.py", line 335, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/interpreters/partial_eval.py", line 2347, in trace_to_jaxpr_dynamic
+    jaxpr, out_avals, consts, attrs_tracked = trace_to_subjaxpr_dynamic(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/interpreters/partial_eval.py", line 2370, in trace_to_subjaxpr_dynamic
+    ans = fun.call_wrapped(*in_tracers_)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/linear_util.py", line 192, in call_wrapped
+    ans = self.f(*args, **dict(self.params, **kwargs))
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/train.py", line 832, in sgd_step
+    (loss, loss_ensemble), new_model_params, opt_state = jax.lax.cond(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/traceback_util.py", line 179, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/conditionals.py", line 295, in cond
+    return _cond(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/conditionals.py", line 245, in _cond
+    jaxprs, consts, out_trees = _initial_style_jaxprs_with_common_consts(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/util.py", line 311, in wrapper
+    return cached(config.trace_context(), *args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/util.py", line 304, in cached
+    return f(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/common.py", line 89, in _initial_style_jaxprs_with_common_consts
+    jaxpr_data = [_initial_style_open_jaxpr(fn, in_tree, in_avals, primitive_name)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/common.py", line 89, in <listcomp>
+    jaxpr_data = [_initial_style_open_jaxpr(fn, in_tree, in_avals, primitive_name)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/common.py", line 60, in _initial_style_open_jaxpr
+    jaxpr, _, consts, attrs_tracked = pe.trace_to_jaxpr_dynamic(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/profiler.py", line 335, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/interpreters/partial_eval.py", line 2347, in trace_to_jaxpr_dynamic
+    jaxpr, out_avals, consts, attrs_tracked = trace_to_subjaxpr_dynamic(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/interpreters/partial_eval.py", line 2370, in trace_to_subjaxpr_dynamic
+    ans = fun.call_wrapped(*in_tracers_)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/linear_util.py", line 192, in call_wrapped
+    ans = self.f(*args, **dict(self.params, **kwargs))
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/train.py", line 834, in <lambda>
+    lambda: c.model_update(
+  File "/home/ant/ssrl/ssrl/brax/training/gradients.py", line 57, in f
+    value, grads = loss_and_pgrad_fn(*args)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/traceback_util.py", line 179, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/api.py", line 693, in value_and_grad_f
+    ans, vjp_py, aux = _vjp(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/api.py", line 2180, in _vjp
+    out_primals, vjp, aux = ad.vjp(flat_fun, primals_flat, has_aux=True)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/interpreters/ad.py", line 145, in vjp
+    out_primals, pvals, jaxpr, consts, aux = linearize(traceable, *primals, has_aux=True)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/interpreters/ad.py", line 132, in linearize
+    jaxpr, out_pvals, consts = pe.trace_to_jaxpr_nounits(jvpfun_flat, in_pvals)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/profiler.py", line 335, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/interpreters/partial_eval.py", line 777, in trace_to_jaxpr_nounits
+    jaxpr, (out_pvals, consts, env) = fun.call_wrapped(pvals)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/linear_util.py", line 192, in call_wrapped
+    ans = self.f(*args, **dict(self.params, **kwargs))
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/losses.py", line 26, in model_loss
+    obs_next, logvars = propagate_obs_batch(
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/losses.py", line 127, in propagate_obs_batch
+    return jax.vmap(propagate_obs)(obs_stack_r, actions_r)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/traceback_util.py", line 179, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/api.py", line 1214, in vmap_f
+    out_flat = batching.batch(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/linear_util.py", line 192, in call_wrapped
+    ans = self.f(*args, **dict(self.params, **kwargs))
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/losses.py", line 121, in propagate_obs
+    _, (obs_next, logvars) = jax.lax.scan(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/traceback_util.py", line 179, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/loops.py", line 281, in scan
+    init_flat, carry_avals, carry_avals_out, init_tree, *rest = _create_jaxpr(init)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/loops.py", line 266, in _create_jaxpr
+    jaxpr, consts, out_tree, attrs_tracked = _initial_style_jaxpr_attrs(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/common.py", line 74, in _initial_style_jaxpr_attrs
+    jaxpr, consts, out_tree, attrs_tracked = _initial_style_open_jaxpr(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/common.py", line 60, in _initial_style_open_jaxpr
+    jaxpr, _, consts, attrs_tracked = pe.trace_to_jaxpr_dynamic(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/profiler.py", line 335, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/interpreters/partial_eval.py", line 2347, in trace_to_jaxpr_dynamic
+    jaxpr, out_avals, consts, attrs_tracked = trace_to_subjaxpr_dynamic(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/interpreters/partial_eval.py", line 2370, in trace_to_subjaxpr_dynamic
+    ans = fun.call_wrapped(*in_tracers_)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/linear_util.py", line 192, in call_wrapped
+    ans = self.f(*args, **dict(self.params, **kwargs))
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/losses.py", line 111, in outer
+    obs_next, _ = jax.lax.scan(inner, obs, (), length=c.policy_repeat)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/traceback_util.py", line 179, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/loops.py", line 281, in scan
+    init_flat, carry_avals, carry_avals_out, init_tree, *rest = _create_jaxpr(init)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/loops.py", line 266, in _create_jaxpr
+    jaxpr, consts, out_tree, attrs_tracked = _initial_style_jaxpr_attrs(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/common.py", line 74, in _initial_style_jaxpr_attrs
+    jaxpr, consts, out_tree, attrs_tracked = _initial_style_open_jaxpr(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/common.py", line 60, in _initial_style_open_jaxpr
+    jaxpr, _, consts, attrs_tracked = pe.trace_to_jaxpr_dynamic(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/profiler.py", line 335, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/interpreters/partial_eval.py", line 2347, in trace_to_jaxpr_dynamic
+    jaxpr, out_avals, consts, attrs_tracked = trace_to_subjaxpr_dynamic(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/interpreters/partial_eval.py", line 2370, in trace_to_subjaxpr_dynamic
+    ans = fun.call_wrapped(*in_tracers_)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/linear_util.py", line 192, in call_wrapped
+    ans = self.f(*args, **dict(self.params, **kwargs))
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/losses.py", line 109, in inner
+    obs_next = jax.vmap(c.dynamics_fn)(obs, u, means)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/traceback_util.py", line 179, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/api.py", line 1214, in vmap_f
+    out_flat = batching.batch(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/linear_util.py", line 192, in call_wrapped
+    ans = self.f(*args, **dict(self.params, **kwargs))
+  File "/home/ant/ssrl/ssrl/brax/envs/aliengo_go_fast.py", line 719, in dynamics_fn
+    norm_obs_new = fn(norm_obs, u, pred, norm_obs_next)
+  File "/home/ant/ssrl/ssrl/brax/envs/aliengo_go_fast.py", line 637, in dynamics_contact_integrate_only
+    state, _ = jax.lax.scan(f, state, (), self.policy_repeat)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/traceback_util.py", line 179, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/loops.py", line 281, in scan
+    init_flat, carry_avals, carry_avals_out, init_tree, *rest = _create_jaxpr(init)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/loops.py", line 266, in _create_jaxpr
+    jaxpr, consts, out_tree, attrs_tracked = _initial_style_jaxpr_attrs(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/common.py", line 74, in _initial_style_jaxpr_attrs
+    jaxpr, consts, out_tree, attrs_tracked = _initial_style_open_jaxpr(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/lax/control_flow/common.py", line 60, in _initial_style_open_jaxpr
+    jaxpr, _, consts, attrs_tracked = pe.trace_to_jaxpr_dynamic(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/profiler.py", line 335, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/interpreters/partial_eval.py", line 2347, in trace_to_jaxpr_dynamic
+    jaxpr, out_avals, consts, attrs_tracked = trace_to_subjaxpr_dynamic(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/interpreters/partial_eval.py", line 2370, in trace_to_subjaxpr_dynamic
+    ans = fun.call_wrapped(*in_tracers_)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/linear_util.py", line 192, in call_wrapped
+    ans = self.f(*args, **dict(self.params, **kwargs))
+  File "/home/ant/ssrl/ssrl/brax/envs/aliengo_go_fast.py", line 631, in f
+    torques, _ = self.torque_pd_control(scaled_action, norm_obs)
+  File "/home/ant/ssrl/ssrl/brax/envs/aliengo_go_fast.py", line 1032, in torque_pd_control
+    cmd = self.low_level_control_hardware(action, obs, limit_Kp=limit_Kp)
+  File "/home/ant/ssrl/ssrl/brax/envs/aliengo_go_fast.py", line 1062, in low_level_control_hardware
+    pdes, contact, leg_phases = Go1Gait.control(
+  File "/home/ant/ssrl/ssrl/brax/robots/aliengo/gait.py", line 100, in control
+    foot_pos_change_swing_FL = _foot_pos_change_swing(
+  File "/home/ant/ssrl/ssrl/brax/robots/aliengo/gait.py", line 177, in _foot_pos_change_swing
+    _cycloid_xy(phi, start_swing_pos[0], end_swing_pos[0]),
+  File "/home/ant/ssrl/ssrl/brax/robots/aliengo/gait.py", line 192, in _cycloid_xy
+    return (end - start)/(2*jp.pi)*(2*jp.pi*phi - jp.sin(2*jp.pi*phi)) + start
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/numpy/array_methods.py", line 739, in op
+    return getattr(self.aval, f"_{name}")(self, *args)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/numpy/array_methods.py", line 265, in deferring_binary_op
+    return binary_op(*args)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/traceback_util.py", line 179, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/pjit.py", line 327, in cache_miss
+    outs, out_flat, out_tree, args_flat, jaxpr, attrs_tracked = _python_pjit_helper(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/pjit.py", line 185, in _python_pjit_helper
+    out_flat = pjit_p.bind(*args_flat, **params)
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/jax/_src/core.py", line 2829, in bind
+    top_trace = find_top_trace(args)
+KeyboardInterrupt

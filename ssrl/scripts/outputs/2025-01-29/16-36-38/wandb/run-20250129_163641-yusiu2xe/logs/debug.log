@@ -1,0 +1,28 @@
+2025-01-29 16:36:41,082 INFO    MainThread:22847 [wandb_setup.py:_flush():76] Current SDK version is 0.15.5
+2025-01-29 16:36:41,082 INFO    MainThread:22847 [wandb_setup.py:_flush():76] Configure stats pid to 22847
+2025-01-29 16:36:41,082 INFO    MainThread:22847 [wandb_setup.py:_flush():76] Loading settings from /home/ant/.config/wandb/settings
+2025-01-29 16:36:41,082 INFO    MainThread:22847 [wandb_setup.py:_flush():76] Loading settings from /home/ant/ssrl/ssrl/scripts/outputs/2025-01-29/16-36-38/wandb/settings
+2025-01-29 16:36:41,082 INFO    MainThread:22847 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2025-01-29 16:36:41,082 INFO    MainThread:22847 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2025-01-29 16:36:41,082 INFO    MainThread:22847 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'ssrl/scripts/rl_benchmarks.py', 'program': '/home/ant/ssrl/ssrl/scripts/rl_benchmarks.py'}
+2025-01-29 16:36:41,082 INFO    MainThread:22847 [wandb_init.py:_log_setup():507] Logging user logs to /home/ant/ssrl/ssrl/scripts/outputs/2025-01-29/16-36-38/wandb/run-20250129_163641-yusiu2xe/logs/debug.log
+2025-01-29 16:36:41,082 INFO    MainThread:22847 [wandb_init.py:_log_setup():508] Logging internal logs to /home/ant/ssrl/ssrl/scripts/outputs/2025-01-29/16-36-38/wandb/run-20250129_163641-yusiu2xe/logs/debug-internal.log
+2025-01-29 16:36:41,082 INFO    MainThread:22847 [wandb_init.py:init():547] calling init triggers
+2025-01-29 16:36:41,082 INFO    MainThread:22847 [wandb_init.py:init():554] wandb.init called with sweep_config: {}
+config: {'run_name': None, 'algo': 'ssrl', 'gpus': '0', 'seed': 0, 'env': 'ant2', 'ssrl_forces_in_q_coords': True, 'ssrl_dynamics_fn': 'contact_integrate_only', 'ssrl_model_probabilistic': True, 'env_ant2': {'backend': 'generalized', 'terminate_when_unhealthy': True}, 'env_hopper2': {'backend': 'generalized', 'terminate_when_unhealthy': True}, 'env_walker2d2': {'backend': 'generalized', 'terminate_when_unhealthy': True}, 'ssrl': {'episode_length': 1000, 'policy_repeat': 1, 'num_epochs': 80, 'model_trains_per_epoch': 1, 'training_steps_per_model_train': 1, 'env_steps_per_training_step': 1000, 'model_rollouts_per_hallucination_update': 400, 'sac_grad_updates_per_hallucination_update': 20, 'init_exploration_steps': 1000, 'clear_model_buffer_after_model_train': True, 'action_repeat': 1, 'obs_history_length': 1, 'num_envs': 1, 'num_evals': 81, 'num_eval_envs': 1, 'policy_normalize_observations': False, 'model_learning_rate': 0.001, 'model_training_batch_size': 250, 'model_training_max_epochs': 2000, 'model_training_convergence_criteria': 0.01, 'model_training_consec_converged_epochs': 6, 'model_training_abs_criteria': None, 'model_training_test_ratio': 0.2, 'model_training_weight_decay': True, 'model_training_stop_gradient': False, 'model_loss_horizon': 1, 'model_check_done_condition': True, 'max_env_buffer_size': None, 'max_model_buffer_size': None, 'sac_learning_rate': 0.0003, 'sac_discounting': 0.99, 'sac_batch_size': 256, 'real_ratio': 0.06, 'sac_reward_scaling': 1.0, 'sac_tau': 0.005, 'sac_fixed_alpha': 0.2, 'seed': 0, 'deterministic_in_env': False, 'deterministic_eval': False, 'hallucination_max_std': -1.0, 'zero_final_layer_of_policy': False}, 'ssrl_linear_threshold_fn': {'start_epoch': 20, 'end_epoch': 150, 'start_model_horizon': 1, 'end_model_horizon': 15}, 'ssrl_hupts_fn': {'start_epoch': 0, 'end_epoch': 9, 'start_hupts': 100, 'end_hupts': 1000}, 'wandb': {'entity': 'an-tsaritsin-itmo-university', 'log': True}}
+2025-01-29 16:36:41,082 INFO    MainThread:22847 [wandb_init.py:init():596] starting backend
+2025-01-29 16:36:41,082 INFO    MainThread:22847 [wandb_init.py:init():600] setting up manager
+2025-01-29 16:36:41,085 INFO    MainThread:22847 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-01-29 16:36:41,089 INFO    MainThread:22847 [wandb_init.py:init():606] backend started and connected
+2025-01-29 16:36:41,093 INFO    MainThread:22847 [wandb_init.py:init():705] updated telemetry
+2025-01-29 16:36:41,115 INFO    MainThread:22847 [wandb_init.py:init():738] communicating run to backend with 60.0 second timeout
+2025-01-29 16:36:42,130 INFO    MainThread:22847 [wandb_run.py:_on_init():2173] communicating current version
+2025-01-29 16:36:42,525 INFO    MainThread:22847 [wandb_run.py:_on_init():2182] got version response upgrade_message: "wandb version 0.19.5 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2025-01-29 16:36:42,525 INFO    MainThread:22847 [wandb_init.py:init():789] starting run threads in backend
+2025-01-29 16:36:43,901 INFO    MainThread:22847 [wandb_run.py:_console_start():2152] atexit reg
+2025-01-29 16:36:43,901 INFO    MainThread:22847 [wandb_run.py:_redirect():2007] redirect: SettingsConsole.WRAP_RAW
+2025-01-29 16:36:43,901 INFO    MainThread:22847 [wandb_run.py:_redirect():2072] Wrapping output streams.
+2025-01-29 16:36:43,902 INFO    MainThread:22847 [wandb_run.py:_redirect():2097] Redirects installed.
+2025-01-29 16:36:43,902 INFO    MainThread:22847 [wandb_init.py:init():830] run started, returning control to user process
+2025-01-29 17:10:58,467 WARNING MsgRouterThr:22847 [router.py:message_loop():77] message_loop has been closed

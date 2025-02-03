@@ -1,0 +1,3 @@
+- wandb.entity=an-tsaritsin-itmo-university
+- wandb.log_ssrl=true
+- render_epoch_interval=15

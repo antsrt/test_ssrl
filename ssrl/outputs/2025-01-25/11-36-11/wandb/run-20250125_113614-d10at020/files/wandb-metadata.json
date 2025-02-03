@@ -1,0 +1,109 @@
+{
+    "os": "Linux-6.8.0-51-generic-x86_64-with-glibc2.39",
+    "python": "3.9.21",
+    "heartbeatAt": "2025-01-25T08:36:15.404713",
+    "startedAt": "2025-01-25T08:36:14.315027",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "wandb.entity=an-tsaritsin-itmo-university",
+        "wandb.log_ssrl=true",
+        "render_epoch_interval=15"
+    ],
+    "state": "running",
+    "program": "/home/ant/ssrl/ssrl/scripts/go1_train.py",
+    "codePath": "ssrl/scripts/go1_train.py",
+    "git": {
+        "remote": "https://github.com/CLeARoboticsLab/ssrl.git",
+        "commit": "ecc430b16beba916a645e15f7911dae499bbdfe8"
+    },
+    "email": "an.tsaritsin@gamil.com",
+    "root": "/home/ant/ssrl",
+    "host": "hellmachine",
+    "username": "ant",
+    "executable": "/home/ant/miniforge3/envs/ssrl/bin/python",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 2696.513333333334,
+        "min": 400.0,
+        "max": 4603.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3979.475,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 2384.672,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 2217.782,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 2435.831,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 4440.093,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 4441.329,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 4441.092,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 1675.346,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 1969.417,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 4438.091,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 3941.34,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 400.0,
+            "min": 400.0,
+            "max": 4603.0
+        }
+    ],
+    "disk": {
+        "total": 114.6000747680664,
+        "used": 84.44448471069336
+    },
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "memory_total": 8585740288
+        }
+    ],
+    "memory": {
+        "total": 14.831607818603516
+    }
+}
