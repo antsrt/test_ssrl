@@ -196,7 +196,7 @@ if __name__ == "__main__":
     gait_params = Go1GaitParams(
         period=0.5,
         r=0.5,
-        swing_h=0.14,
+        swing_h=0.08,
         dbody_h=-0.05,
         bias=jp.array([0.0, 0.5, 0.5, 0.0])
     )

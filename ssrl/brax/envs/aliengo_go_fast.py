@@ -175,7 +175,7 @@ class Go1GoFast(RlwamEnv):
 
         super().__init__(sys=sys, backend=backend, **kwargs)
 
-        self._period = 0.60  # period of the gait cycle (sec)
+        self._period = 0.50  # period of the gait cycle (sec)
         self._forward_cmd_vel = jp.mean(jp.array(forward_cmd_vel_range))
         self._initial_yaw_range = initial_yaw_range
         if contact_time_const_range is None:
@@ -1055,7 +1055,7 @@ class Go1GoFast(RlwamEnv):
         gait_params = Go1GaitParams(
             period=self._period,
             r=0.5,
-            swing_h=0.12,
+            swing_h=0.08,
             dbody_h=dbody_h,
             bias=jp.array([0.0, 0.5, 0.5, 0.0])
         )
