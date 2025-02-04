@@ -16,10 +16,10 @@ class Go1Utils:
     THIGH_OFFSET = 0.083
     """constant: the length of the thigh motor"""
 
-    LEG_OFFSET_X = 0.2399
+    LEG_OFFSET_X = 0.25
     """constant: x distance from the robot COM to the leg base."""
 
-    LEG_OFFSET_Y = 0.051
+    LEG_OFFSET_Y = 0.12
     """constant: y distance from the robot COM to the leg base."""
 
     THIGH_LENGTH = 0.25
@@ -29,16 +29,16 @@ class Go1Utils:
     """constant: length of the calf"""
 
     STANDING_FOOT_POSITIONS = jp.array([
-        0.2399, -0.134, -0.45,
-        0.2399, 0.134, -0.45,
-        -0.2399, -0.134, -0.45,
-        -0.2399, 0.134, -0.45
+        0.2399, -0.203, -0.45,
+        0.2399, 0.203, -0.45,
+        -0.2399, -0.203, -0.45,
+        -0.2399, 0.203, -0.45,
     ])
 
-    STANDING_JOINT_ANGLES_FR = jp.array([-0.01014303, 0.7180088, -1.4360176])
-    STANDING_JOINT_ANGLES_FL = jp.array([0.01014303, 0.7180088, -1.4360176])
-    STANDING_JOINT_ANGLES_RR = jp.array([-0.01014303, 0.7180088, -1.4360176])
-    STANDING_JOINT_ANGLES_RL = jp.array([0.01014303, 0.7180088, -1.4360176])
+    STANDING_JOINT_ANGLES_FR = jp.array([-0.01014303, 0.65, -1.42])
+    STANDING_JOINT_ANGLES_FL = jp.array([0.01014303, 0.65, -1.42])
+    STANDING_JOINT_ANGLES_RR = jp.array([-0.01014303, 0.65, -1.42])
+    STANDING_JOINT_ANGLES_RL = jp.array([0.01014303, 0.65, -1.42])
 
     ALL_STANDING_JOINT_ANGLES = jp.concatenate([
         STANDING_JOINT_ANGLES_FR,

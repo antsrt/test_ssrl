@@ -1,0 +1,477 @@
+run_name: null
+sweep_name: null
+env: Go1GoFast
+algo: ssrl
+gpus: '0'
+num_seeds: 1
+ssrl_dynamics_fn: contact_integrate_only
+render_during_training: true
+render_epoch_interval: 1
+render_seed: 0
+common:
+  action_repeat: 1
+  obs_history_length: 5
+  normalize_observations: false
+  forces_in_q_coords: true
+actor_network:
+  hidden_layers: 2
+  hidden_size: 512
+  activation: swish
+  max_std: null
+critic_network:
+  hidden_layers: 5
+  hidden_size: 256
+env_common:
+  policy_repeat: 4
+  forward_vel_rew_weight: 2.0
+  turn_rew_weight: 0.5
+  pitch_rew_weight: 0.25
+  roll_rew_weight: 0.25
+  yaw_rew_weight: 0.5
+  side_motion_rew_weight: 0.5
+  z_vel_change_rew_weight: 0.15
+  ang_vel_rew_weight: 0.0
+  ang_change_rew_weight: 0.25
+  joint_lim_rew_weight: 0.0
+  torque_lim_rew_weight: 0.0
+  joint_acc_rew_weight: 0.0
+  action_rew_weight: 0.0
+  cosmetic_rew_weight: 0.0
+  energy_rew_weight: 0.25
+  foot_z_rew_weight: 0.0
+  torque_lim_penalty_weight: 0.1
+  fallen_roll: 0.785
+  fallen_pitch: 0.785
+  include_height_in_obs: false
+  gains_in_action_space: false
+  reward_type: normalized
+env_sac:
+  policy_repeat: ${env_common.policy_repeat}
+  forward_cmd_vel_type: constant
+  forward_cmd_vel_range: 0.0
+  forward_cmd_vel_period_range:
+  - 40.0
+  - 40.0
+  turn_cmd_rate_range:
+  - -0.0
+  - 0.0
+  initial_yaw_range:
+  - -0.0
+  - 0.0
+  contact_time_const: 0.02
+  contact_damping_ratio: 1.0
+  friction_range:
+  - 0.6
+  - 0.6
+  ground_roll_range:
+  - 0.0
+  - 0.0
+  ground_pitch_range:
+  - 0.0
+  - 0.0
+  joint_damping_perc_range:
+  - 1.0
+  - 1.0
+  joint_gain_range:
+  - 1.0
+  - 1.0
+  link_mass_perc_range:
+  - 1.0
+  - 1.0
+  forward_vel_rew_weight: ${env_common.forward_vel_rew_weight}
+  turn_rew_weight: ${env_common.turn_rew_weight}
+  pitch_rew_weight: ${env_common.pitch_rew_weight}
+  roll_rew_weight: ${env_common.roll_rew_weight}
+  yaw_rew_weight: ${env_common.yaw_rew_weight}
+  side_motion_rew_weight: ${env_common.side_motion_rew_weight}
+  z_vel_change_rew_weight: ${env_common.z_vel_change_rew_weight}
+  ang_vel_rew_weight: ${env_common.ang_vel_rew_weight}
+  ang_change_rew_weight: ${env_common.ang_change_rew_weight}
+  joint_lim_rew_weight: ${env_common.joint_lim_rew_weight}
+  torque_lim_rew_weight: ${env_common.torque_lim_rew_weight}
+  joint_acc_rew_weight: ${env_common.joint_acc_rew_weight}
+  action_rew_weight: ${env_common.action_rew_weight}
+  cosmetic_rew_weight: ${env_common.cosmetic_rew_weight}
+  energy_rew_weight: ${env_common.energy_rew_weight}
+  foot_z_rew_weight: ${env_common.foot_z_rew_weight}
+  torque_lim_penalty_weight: ${env_common.torque_lim_penalty_weight}
+  fallen_roll: ${env_common.fallen_roll}
+  fallen_pitch: ${env_common.fallen_pitch}
+  forces_in_q_coords: ${common.forces_in_q_coords}
+  include_height_in_obs: ${env_common.include_height_in_obs}
+  gains_in_action_space: ${env_common.gains_in_action_space}
+  reward_type: ${env_common.reward_type}
+sac:
+  num_timesteps: 10000000
+  episode_length: 1000
+  action_repeat: ${common.action_repeat}
+  obs_history_length: ${common.obs_history_length}
+  num_envs: 1
+  num_eval_envs: 500
+  learning_rate: 0.0001
+  discounting: 0.99
+  seed: 0
+  batch_size: 200
+  num_evals: 10
+  normalize_observations: ${common.normalize_observations}
+  reward_scaling: 1
+  tau: 0.001
+  min_replay_size: 10000
+  max_replay_size: 200000
+  grad_updates_per_step: 20
+  deterministic_eval: true
+env_ssrl:
+  policy_repeat: ${env_common.policy_repeat}
+  forward_cmd_vel_type: constant
+  forward_cmd_vel_range: 0.0
+  forward_cmd_vel_period_range:
+  - 40.0
+  - 40.0
+  turn_cmd_rate_range:
+  - -0.0
+  - 0.0
+  initial_yaw_range:
+  - -0.0
+  - 0.0
+  contact_time_const: 0.02
+  contact_damping_ratio: 1.0
+  friction_range:
+  - 0.6
+  - 0.6
+  ground_roll_range:
+  - 0.0
+  - 0.0
+  ground_pitch_range:
+  - 0.0
+  - 0.0
+  joint_damping_perc_range:
+  - 1.0
+  - 1.0
+  joint_gain_range:
+  - 1.0
+  - 1.0
+  link_mass_perc_range:
+  - 1.0
+  - 1.0
+  forward_vel_rew_weight: ${env_common.forward_vel_rew_weight}
+  turn_rew_weight: ${env_common.turn_rew_weight}
+  pitch_rew_weight: ${env_common.pitch_rew_weight}
+  roll_rew_weight: ${env_common.roll_rew_weight}
+  yaw_rew_weight: ${env_common.yaw_rew_weight}
+  side_motion_rew_weight: ${env_common.side_motion_rew_weight}
+  z_vel_change_rew_weight: ${env_common.z_vel_change_rew_weight}
+  ang_vel_rew_weight: ${env_common.ang_vel_rew_weight}
+  ang_change_rew_weight: ${env_common.ang_change_rew_weight}
+  joint_lim_rew_weight: ${env_common.joint_lim_rew_weight}
+  torque_lim_rew_weight: ${env_common.torque_lim_rew_weight}
+  joint_acc_rew_weight: ${env_common.joint_acc_rew_weight}
+  action_rew_weight: ${env_common.action_rew_weight}
+  cosmetic_rew_weight: ${env_common.cosmetic_rew_weight}
+  energy_rew_weight: ${env_common.energy_rew_weight}
+  foot_z_rew_weight: ${env_common.foot_z_rew_weight}
+  torque_lim_penalty_weight: ${env_common.torque_lim_penalty_weight}
+  fallen_roll: ${env_common.fallen_roll}
+  fallen_pitch: ${env_common.fallen_pitch}
+  forces_in_q_coords: ${common.forces_in_q_coords}
+  include_height_in_obs: ${env_common.include_height_in_obs}
+  body_height_in_action_space: true
+  gains_in_action_space: ${env_common.gains_in_action_space}
+  reward_type: ${env_common.reward_type}
+  healthy_delta_radius: 2.0
+  healthy_delta_yaw: 1.57
+ssrl_start_with_sac: false
+ssrl:
+  episode_length: 1000
+  policy_repeat: 1
+  num_epochs: 40
+  model_trains_per_epoch: 1
+  training_steps_per_model_train: 1
+  env_steps_per_training_step: 1000
+  model_rollouts_per_hallucination_update: 400
+  sac_grad_updates_per_hallucination_update: 60
+  init_exploration_steps: 1000
+  clear_model_buffer_after_model_train: false
+  action_repeat: ${common.action_repeat}
+  obs_history_length: ${common.obs_history_length}
+  num_envs: 1
+  num_evals: 41
+  num_eval_envs: 1
+  policy_normalize_observations: ${common.normalize_observations}
+  model_learning_rate: 0.001
+  model_training_batch_size: 200
+  model_training_max_sgd_steps_per_epoch: null
+  model_training_max_epochs: 1000
+  model_training_convergence_criteria: 0.01
+  model_training_consec_converged_epochs: 6
+  model_training_abs_criteria: null
+  model_training_test_ratio: 0.2
+  model_training_weight_decay: true
+  model_training_stop_gradient: false
+  model_loss_horizon: 4
+  model_check_done_condition: true
+  max_env_buffer_size: 15000
+  max_model_buffer_size: 400000
+  sac_learning_rate: 0.0002
+  sac_discounting: 0.99
+  sac_batch_size: 256
+  real_ratio: 0.06
+  sac_reward_scaling: 1.0
+  sac_tau: 0.001
+  sac_fixed_alpha: None
+  seed: 2
+  deterministic_in_env: true
+  deterministic_eval: true
+  hallucination_max_std: -1.0
+  zero_final_layer_of_policy: false
+ssrl_model:
+  hidden_size: 400
+  ensemble_size: 7
+  num_elites: 5
+  probabilistic: true
+ssrl_linear_threshold_fn:
+  start_epoch: 0
+  end_epoch: 10
+  start_model_horizon: 1
+  end_model_horizon: 20
+ssrl_hupts_fn:
+  start_epoch: 0
+  end_epoch: 4
+  start_hupts: 10
+  end_hupts: 1000
+render:
+  policy: ssrl
+wandb:
+  entity: an-tsaritsin-itmo-university
+  log_sac: true
+  log_ssrl: true
+save_policy:
+  sac: true
+  sac_all: true
+  ssrl: true
+  ssrl_all: true
+torque_validate:
+  hardware_data: true
+Running on GPU 0
+[2025-02-04 15:26:51,699][root][INFO] - Converting mesh (2468173141590867502, 1606270014681207576) into convex hull.
+[2025-02-04 15:26:55,021][root][INFO] - Converting mesh (1133009454133499000, 4693354686290792281) into convex hull.
+[2025-02-04 15:26:55,418][root][INFO] - Converting mesh (-5012871954539629074, -3109236027483231005) into convex hull.
+[2025-02-04 15:26:56,591][root][INFO] - Converting mesh (-6629013615187213293, 5299154513361193306) into convex hull.
+[2025-02-04 15:26:57,475][root][INFO] - Converting mesh (4499544381096444756, 1103808936193181631) into convex hull.
+[2025-02-04 15:27:57,955][absl][INFO] - {'eval/walltime': 53.97777581214905, 'eval/episode_forward_vel': Array(-22.84111184, dtype=float64), 'eval/episode_penalty_torque_lim': Array(-0.00024607, dtype=float64), 'eval/episode_rew_action': Array(0., dtype=float64), 'eval/episode_rew_ang_change': Array(4.1808689, dtype=float64), 'eval/episode_rew_ang_vel': Array(0., dtype=float64), 'eval/episode_rew_cosmetic': Array(0., dtype=float64), 'eval/episode_rew_energy': Array(0.07782321, dtype=float64), 'eval/episode_rew_foot_z': Array(0., dtype=float64), 'eval/episode_rew_forward_vel': Array(-9.82413412, dtype=float64), 'eval/episode_rew_joint_acc': Array(0., dtype=float64), 'eval/episode_rew_joint_limits': Array(0., dtype=float64), 'eval/episode_rew_pitch': Array(4.47114682, dtype=float64), 'eval/episode_rew_roll': Array(3.53154125, dtype=float64), 'eval/episode_rew_side_motion': Array(1.17027286, dtype=float64), 'eval/episode_rew_torque_limits': Array(0., dtype=float64), 'eval/episode_rew_turn': Array(6.29098257, dtype=float64), 'eval/episode_rew_yaw': Array(8.84236178, dtype=float64), 'eval/episode_rew_z_vel_change': Array(2.13783424, dtype=float64), 'eval/episode_reward': Array(20.0301645, dtype=float64), 'eval/episode_step_count': Array(3570., dtype=float64), 'eval/avg_episode_length': Array(85., dtype=float64), 'eval/epoch_eval_time': 53.97777581214905, 'eval/sps': 18.5261431200899}
+Steps / Eval:  0
+Reward is  20.030164498215104
+Total reward is  236.74050776015252
+[2025-02-04 15:30:16,900][absl][INFO] - env buffer size after init exploration 1000
+Model epoch 0: train total loss -2.205603981086159, train mean loss 0.0924354927985503, test mean loss [0.0820638  0.08203827 0.08202881 0.08205144 0.08205712 0.08203928
+ 0.08205207]
+Model epoch 1: train total loss -3.1126437846492667, train mean loss 0.09230207009772666, test mean loss [0.08148475 0.08120841 0.08092485 0.08130787 0.08145341 0.08117299
+ 0.08134976]
+Model epoch 2: train total loss -10.64242052294381, train mean loss 0.08978384240018977, test mean loss [0.08005432 0.07853653 0.0785279  0.07984232 0.08077525 0.07780214
+ 0.08035355]
+Model epoch 3: train total loss -24.64161217926344, train mean loss 0.08844540339772543, test mean loss [0.07972217 0.0775086  0.07826263 0.07817254 0.07841634 0.07527238
+ 0.07800738]
+Model epoch 4: train total loss -32.00645068327846, train mean loss 0.08741350500981042, test mean loss [0.07814246 0.07762621 0.0753178  0.07682407 0.07733061 0.07344602
+ 0.0785238 ]
+Model epoch 5: train total loss -33.914323626466064, train mean loss 0.08565099929764745, test mean loss [0.07879586 0.07590797 0.07361072 0.07650113 0.07697617 0.07232444
+ 0.07886875]
+Model epoch 6: train total loss -35.296298108827045, train mean loss 0.08568428372414573, test mean loss [0.07923953 0.07616284 0.07303091 0.07644264 0.07796524 0.06881543
+ 0.07939205]
+Model epoch 7: train total loss -36.945904873302396, train mean loss 0.08496365791207751, test mean loss [0.07764887 0.07402077 0.07170217 0.0778982  0.0784316  0.06722929
+ 0.07832146]
+Model epoch 8: train total loss -37.797497447672754, train mean loss 0.08359277237881216, test mean loss [0.07643879 0.07188867 0.07121045 0.07857642 0.07641502 0.06616662
+ 0.07787259]
+Model epoch 9: train total loss -38.95113802031336, train mean loss 0.08291469457373582, test mean loss [0.07571129 0.07133878 0.07071037 0.07781197 0.0764141  0.06620047
+ 0.07793276]
+Model epoch 10: train total loss -39.257209028943606, train mean loss 0.08274593675390055, test mean loss [0.07467318 0.06962786 0.06958371 0.07797064 0.07511394 0.06595514
+ 0.07707784]
+Model epoch 11: train total loss -40.02036161203551, train mean loss 0.08409755799800792, test mean loss [0.0732936  0.06849547 0.06766987 0.07685957 0.07442965 0.06633259
+ 0.076339  ]
+Model epoch 12: train total loss -40.791590958776084, train mean loss 0.08200923605700132, test mean loss [0.07197701 0.06777232 0.06627131 0.07619962 0.07299919 0.06617382
+ 0.07533956]
+Model epoch 13: train total loss -41.725833906241135, train mean loss 0.08023032200717438, test mean loss [0.07029189 0.06732883 0.0661637  0.07526652 0.07129026 0.06606922
+ 0.07438024]
+Model epoch 14: train total loss -41.785043631747655, train mean loss 0.08240740316986443, test mean loss [0.06880817 0.0666495  0.06544034 0.07486334 0.06989758 0.06597213
+ 0.07377319]
+Model epoch 15: train total loss -42.340184656162585, train mean loss 0.07802638711576115, test mean loss [0.06793017 0.06587371 0.06478622 0.0733208  0.06882489 0.06587537
+ 0.07339523]
+Model epoch 16: train total loss -43.19738305662321, train mean loss 0.07754964908020028, test mean loss [0.06702768 0.06524155 0.06372339 0.07231564 0.067668   0.06563508
+ 0.07205438]
+Model epoch 17: train total loss -43.52956801446437, train mean loss 0.07864188851781538, test mean loss [0.06632046 0.06469978 0.06300315 0.07089949 0.06671595 0.06503927
+ 0.07125091]
+Model epoch 18: train total loss -43.71530214602283, train mean loss 0.07856607368806849, test mean loss [0.06554898 0.06418372 0.06287642 0.06941697 0.06611931 0.06449333
+ 0.07028325]
+Model epoch 19: train total loss -44.349868418835364, train mean loss 0.07503068929989742, test mean loss [0.06487183 0.06379714 0.06253272 0.06828874 0.06560751 0.06418497
+ 0.06925363]
+Model epoch 20: train total loss -44.568898667770824, train mean loss 0.07571053495618177, test mean loss [0.06453942 0.06319208 0.06218769 0.06729047 0.06487065 0.06359683
+ 0.06858744]
+Model epoch 21: train total loss -45.073038304525284, train mean loss 0.0736604080758413, test mean loss [0.0641151  0.06300383 0.06177355 0.06686925 0.06456587 0.06336695
+ 0.06752512]
+Model epoch 22: train total loss -45.287220679584536, train mean loss 0.07416912261705066, test mean loss [0.06382011 0.06254254 0.06124723 0.06611401 0.06445893 0.0629626
+ 0.06689446]
+Model epoch 23: train total loss -45.475524708958474, train mean loss 0.07305378674709183, test mean loss [0.06343279 0.06228357 0.06073571 0.06508359 0.06425512 0.06265132
+ 0.06613102]
+Model epoch 24: train total loss -45.58384927396092, train mean loss 0.0714627546839818, test mean loss [0.06327664 0.06191561 0.0601318  0.0645521  0.06370989 0.06217168
+ 0.06539996]
+Model epoch 25: train total loss -45.1556532581699, train mean loss 0.07137397516364641, test mean loss [0.06273882 0.06154375 0.05969798 0.06407827 0.06353247 0.06197961
+ 0.06466968]
+Model epoch 26: train total loss -45.12741609391381, train mean loss 0.07114727956630283, test mean loss [0.06240172 0.06093687 0.05891507 0.06374566 0.06326697 0.06190739
+ 0.06392425]
+Model epoch 27: train total loss -45.41789418707627, train mean loss 0.07294106979013415, test mean loss [0.06187877 0.06046244 0.05826316 0.06344531 0.06360197 0.06155222
+ 0.06347168]
+Model epoch 28: train total loss -45.82882451434826, train mean loss 0.07066171002841659, test mean loss [0.0614989  0.06003022 0.05764667 0.06327628 0.06340924 0.06143161
+ 0.06313696]
+Model epoch 29: train total loss -46.191728485105685, train mean loss 0.07139420425479195, test mean loss [0.06114039 0.05975169 0.05704641 0.06304136 0.06241726 0.06122587
+ 0.06268406]
+Model epoch 30: train total loss -46.28046965932247, train mean loss 0.07048772851732552, test mean loss [0.06068381 0.05935823 0.05646237 0.06275697 0.06207837 0.06092768
+ 0.06248471]
+Model epoch 31: train total loss -46.54550263707361, train mean loss 0.07103893848892429, test mean loss [0.06027518 0.0588883  0.05578727 0.06251964 0.06201606 0.06079462
+ 0.06215311]
+Model epoch 32: train total loss -46.744386352223394, train mean loss 0.06883233208640599, test mean loss [0.06009609 0.05830155 0.05523056 0.06224295 0.06165533 0.06056888
+ 0.06198745]
+Model epoch 33: train total loss -47.05926053524792, train mean loss 0.06960013748630971, test mean loss [0.05941783 0.0579539  0.05448896 0.06218554 0.06139609 0.06028801
+ 0.06160675]
+Model epoch 34: train total loss -47.622354367600735, train mean loss 0.06624992525597433, test mean loss [0.0584458  0.05736295 0.05382353 0.0618979  0.06111324 0.06016186
+ 0.06113717]
+Model epoch 35: train total loss -47.552551473295274, train mean loss 0.06682354028654487, test mean loss [0.05788789 0.05687587 0.05287567 0.06151574 0.06097706 0.05986443
+ 0.06079019]
+Model epoch 36: train total loss -47.80519745018902, train mean loss 0.06704187446709459, test mean loss [0.05713154 0.05646509 0.05198342 0.0610872  0.06056887 0.05962
+ 0.06021681]
+Model epoch 37: train total loss -48.07222738417247, train mean loss 0.06502150748084388, test mean loss [0.05633482 0.05601636 0.05119609 0.06070266 0.05984635 0.05939789
+ 0.05948312]
+Model epoch 38: train total loss -48.23287405388018, train mean loss 0.0653671942611917, test mean loss [0.05554098 0.05558041 0.05045152 0.05991525 0.05917937 0.05898924
+ 0.05895205]
+Model epoch 39: train total loss -48.468054287843366, train mean loss 0.06468348471004146, test mean loss [0.05474522 0.05492096 0.04955127 0.05927272 0.0586465  0.05858161
+ 0.05822192]
+Model epoch 40: train total loss -48.82360891969092, train mean loss 0.06526907183986798, test mean loss [0.05396001 0.05462976 0.04857607 0.0586321  0.05813662 0.05834696
+ 0.05760026]
+Model epoch 41: train total loss -48.83683732235645, train mean loss 0.06542369242747056, test mean loss [0.05312008 0.05388004 0.04799811 0.05799741 0.05751133 0.05794126
+ 0.05671314]
+Model epoch 42: train total loss -49.149501159659174, train mean loss 0.06331062552068338, test mean loss [0.05220394 0.05338348 0.04722957 0.05740666 0.0567677  0.05716238
+ 0.05588039]
+Model epoch 43: train total loss -49.472138345269464, train mean loss 0.061953469137799436, test mean loss [0.05152261 0.05255696 0.04631596 0.05673828 0.05628887 0.05658336
+ 0.05514833]
+Model epoch 44: train total loss -49.76753800466176, train mean loss 0.06120864190099776, test mean loss [0.05054156 0.05185896 0.04572193 0.0561068  0.05562579 0.0559737
+ 0.05410753]
+Model epoch 45: train total loss -50.03574065352955, train mean loss 0.060436062837692296, test mean loss [0.04969556 0.05121507 0.04477699 0.05527798 0.05493283 0.05546685
+ 0.0530983 ]
+Model epoch 46: train total loss -50.24107049807065, train mean loss 0.059531822177059275, test mean loss [0.04910195 0.05029732 0.04393159 0.05435032 0.05418827 0.05494257
+ 0.05215332]
+Model epoch 47: train total loss -50.52912471804039, train mean loss 0.059198397360456144, test mean loss [0.04842974 0.04937434 0.0430782  0.05353315 0.05340338 0.0541681
+ 0.05133099]
+Model epoch 48: train total loss -50.942599941719315, train mean loss 0.057336774235275306, test mean loss [0.04775248 0.04853475 0.04230681 0.05248762 0.05270462 0.0536097
+ 0.05032821]
+Model epoch 49: train total loss -51.03229644954549, train mean loss 0.05706767801033622, test mean loss [0.04669511 0.04762542 0.0414229  0.05173735 0.05185703 0.05298391
+ 0.04961726]
+Model epoch 50: train total loss -51.50053667355365, train mean loss 0.054498205696363954, test mean loss [0.04598167 0.04666134 0.04060571 0.05063515 0.05111811 0.05207454
+ 0.04873314]
+Model epoch 51: train total loss -51.67730409430824, train mean loss 0.05196737326752502, test mean loss [0.04516356 0.04580194 0.03978958 0.04975855 0.05044975 0.05145698
+ 0.04794029]
+Model epoch 52: train total loss -51.92174495481457, train mean loss 0.05254185104287111, test mean loss [0.04454191 0.04498648 0.03892561 0.04886581 0.04974206 0.05075695
+ 0.04720338]
+Model epoch 53: train total loss -52.09262667661417, train mean loss 0.053637988118690645, test mean loss [0.04378385 0.04444224 0.03835369 0.04822701 0.04905423 0.04993344
+ 0.04631804]
+Model epoch 54: train total loss -52.07360580382844, train mean loss 0.051495505099624604, test mean loss [0.04311713 0.04377459 0.03754375 0.04754202 0.04832999 0.0491501
+ 0.04558607]
+Model epoch 55: train total loss -52.42167144228229, train mean loss 0.050160159550005926, test mean loss [0.04261021 0.04276224 0.03691594 0.04671475 0.04747026 0.0484901
+ 0.04491243]
+Model epoch 56: train total loss -52.61450152837092, train mean loss 0.049053496471466604, test mean loss [0.04210489 0.04211512 0.03634656 0.04579344 0.04658899 0.04797193
+ 0.04415053]
+Model epoch 57: train total loss -52.30084669660095, train mean loss 0.05156644703240417, test mean loss [0.04157955 0.04150779 0.03574344 0.04525209 0.04579573 0.04761063
+ 0.04353581]
+Model epoch 58: train total loss -52.85358895482095, train mean loss 0.04916298389370374, test mean loss [0.04117038 0.04071623 0.03512666 0.04472958 0.04501775 0.04696922
+ 0.04278722]
+Model epoch 59: train total loss -53.560486700891325, train mean loss 0.047230922779526965, test mean loss [0.04081902 0.04017271 0.03457949 0.04403971 0.04421989 0.04616762
+ 0.04221539]
+Model epoch 60: train total loss -53.617825112115455, train mean loss 0.04663667474322456, test mean loss [0.04057664 0.03965401 0.03420442 0.04335187 0.0436311  0.04550191
+ 0.04153745]
+Model epoch 61: train total loss -53.758029393128865, train mean loss 0.046894900825871916, test mean loss [0.03987095 0.03903536 0.03390796 0.04278939 0.04298288 0.04505061
+ 0.04073308]
+Model epoch 62: train total loss -53.68943569521653, train mean loss 0.046751150749673315, test mean loss [0.03931909 0.03883384 0.03364912 0.04223101 0.04220785 0.04447304
+ 0.03995795]
+Model epoch 63: train total loss -53.790812032633184, train mean loss 0.045815131915461896, test mean loss [0.03872563 0.03885662 0.03347216 0.04157839 0.0416101  0.04397629
+ 0.03949063]
+Model epoch 64: train total loss -53.96865494938533, train mean loss 0.045007094270193185, test mean loss [0.03807139 0.03889729 0.03280794 0.04110273 0.04094507 0.04339579
+ 0.03903549]
+Model epoch 65: train total loss -54.364621732729425, train mean loss 0.04378760323096433, test mean loss [0.03795145 0.03837323 0.03239727 0.04067376 0.04030143 0.04287679
+ 0.03857588]
+Model epoch 66: train total loss -54.17107667225585, train mean loss 0.04388636759638769, test mean loss [0.03744914 0.03808521 0.03239208 0.03995484 0.03966362 0.04256216
+ 0.03830602]
+Model epoch 67: train total loss -54.36843663179105, train mean loss 0.043871549235469494, test mean loss [0.03704074 0.0374228  0.03177618 0.03936373 0.03933156 0.04204303
+ 0.03781172]
+Model epoch 68: train total loss -54.854378913624245, train mean loss 0.042958814058326425, test mean loss [0.03664936 0.03685951 0.03139155 0.03901245 0.03868545 0.04166819
+ 0.03741615]
+Model epoch 69: train total loss -55.159119078772385, train mean loss 0.04232221300736812, test mean loss [0.03624452 0.03641341 0.03095554 0.03836111 0.03854141 0.04104624
+ 0.0370163 ]
+Model epoch 70: train total loss -55.14250021074798, train mean loss 0.04102018679929032, test mean loss [0.03587168 0.03572493 0.03079677 0.03796858 0.03799418 0.04062566
+ 0.03683923]
+Model epoch 71: train total loss -55.25936336118074, train mean loss 0.041264505446924456, test mean loss [0.03553393 0.03527805 0.03047362 0.03764668 0.03760569 0.04007351
+ 0.03640467]
+Model epoch 72: train total loss -55.425053700702406, train mean loss 0.042015081130141275, test mean loss [0.03533453 0.03497539 0.03004933 0.03712863 0.03740712 0.03939994
+ 0.0362157 ]
+Model epoch 73: train total loss -55.9156924213801, train mean loss 0.041030829564492936, test mean loss [0.03505178 0.03442818 0.02976412 0.03695416 0.0370433  0.03902192
+ 0.0358352 ]
+Model epoch 74: train total loss -55.71743402006773, train mean loss 0.040201941231835986, test mean loss [0.03465431 0.03413662 0.02965447 0.03634605 0.03654797 0.03852806
+ 0.03564038]
+Model epoch 75: train total loss -55.735301227267136, train mean loss 0.04120578788110973, test mean loss [0.03433061 0.03383736 0.02916632 0.03594361 0.03634739 0.03795234
+ 0.03535022]
+Model epoch 76: train total loss -56.21892490254105, train mean loss 0.0400855124719672, test mean loss [0.03402838 0.03364079 0.02924353 0.03575854 0.03599679 0.03760855
+ 0.0349926 ]
+Model epoch 77: train total loss -56.35674556951643, train mean loss 0.03944582074699106, test mean loss [0.03388669 0.03321397 0.02881058 0.03527706 0.03552067 0.03739108
+ 0.03469716]
+Model epoch 78: train total loss -56.397979099953844, train mean loss 0.03994272809235862, test mean loss [0.0336552  0.03281045 0.02850332 0.03496618 0.03543309 0.03673173
+ 0.03435691]
+Model epoch 79: train total loss -56.87384282641981, train mean loss 0.03852364053961246, test mean loss [0.03318821 0.03251772 0.02814036 0.03469965 0.03496474 0.03619042
+ 0.03420755]
+Model epoch 80: train total loss -56.64892623414997, train mean loss 0.038192096352160934, test mean loss [0.03289516 0.03219807 0.02788072 0.03425056 0.03471873 0.03571206
+ 0.03371312]
+Model epoch 81: train total loss -56.93721098619712, train mean loss 0.03678635216126899, test mean loss [0.03278073 0.03188096 0.02783047 0.03393908 0.03431561 0.03521708
+ 0.03343299]
+Model epoch 82: train total loss -57.05823473827773, train mean loss 0.036974782911055236, test mean loss [0.032464   0.03170772 0.02759969 0.03372623 0.03395706 0.03466475
+ 0.03322677]
+Model epoch 83: train total loss -57.03522068662026, train mean loss 0.03716424500980015, test mean loss [0.03235643 0.03144814 0.02732273 0.03340684 0.03363742 0.03410302
+ 0.03297889]
+Model epoch 84: train total loss -57.576918284365824, train mean loss 0.035967420417872854, test mean loss [0.03209186 0.03121009 0.02697148 0.03322351 0.03341637 0.03352429
+ 0.0327085 ]
+Model epoch 85: train total loss -57.648197804957015, train mean loss 0.03718648176595479, test mean loss [0.03202314 0.03085146 0.02674734 0.03306448 0.03318524 0.0330828
+ 0.0323707 ]
+Model epoch 86: train total loss -57.523475633572524, train mean loss 0.0367045904413899, test mean loss [0.03180271 0.0305711  0.02642842 0.0329323  0.03283221 0.03258223
+ 0.03218456]
+Model epoch 87: train total loss -57.64705707056901, train mean loss 0.036233427789814344, test mean loss [0.03150152 0.03015377 0.02706335 0.03273108 0.03258861 0.03271297
+ 0.03184977]
+Model epoch 88: train total loss -57.43469019317389, train mean loss 0.03574627420307908, test mean loss [0.03139743 0.03005015 0.02660146 0.03271005 0.03232509 0.03192448
+ 0.03171267]
+Model epoch 89: train total loss -57.76789335656809, train mean loss 0.03608503950121024, test mean loss [0.03158538 0.02970608 0.0262058  0.0324149  0.03211045 0.03158223
+ 0.03143995]
+Model epoch 90: train total loss -57.88511823815454, train mean loss 0.035388431290803296, test mean loss [0.03109816 0.02951855 0.02623167 0.03196678 0.03187252 0.03134575
+ 0.03135597]
+Model epoch 91: train total loss -57.96574232167662, train mean loss 0.03566876616874858, test mean loss [0.03095782 0.0291575  0.02607145 0.03191695 0.03167674 0.03109134
+ 0.03095345]
+Traceback (most recent call last):
+  File "/home/ant/ssrl/ssrl/scripts/aliengo_train.py", line 248, in <module>
+    train_go1()
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/home/ant/miniforge3/envs/ssrl/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/home/ant/ssrl/ssrl/scripts/aliengo_train.py", line 199, in train_go1
+    state = train_fn(
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/train.py", line 263, in train
+    env_state) = sim_training_epoch_with_timing(
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/train.py", line 947, in sim_training_epoch_with_timing
+    training_state, model_metrics = train_model(
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/train.py", line 661, in train_model
+    test_total_loss, test_mean_loss) = model_training_epoch(
+  File "/home/ant/ssrl/ssrl/brax/training/agents/ssrl/train.py", line 745, in model_training_epoch
+    test_total_losses, test_mean_losses) = model_training_epoch_jit(
+  File "<string>", line 1, in <lambda>
+KeyboardInterrupt

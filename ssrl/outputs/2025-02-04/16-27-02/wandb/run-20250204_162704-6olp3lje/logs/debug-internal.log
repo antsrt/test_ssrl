@@ -1,0 +1,17 @@
+2025-02-04 16:27:04,936 INFO    StreamThr :53340 [internal.py:wandb_internal():86] W&B internal server running at pid: 53340, started at: 2025-02-04 16:27:04.935860
+2025-02-04 16:27:04,937 DEBUG   HandlerThread:53340 [handler.py:handle_request():144] handle_request: status
+2025-02-04 16:27:05,040 INFO    WriterThread:53340 [datastore.py:open_for_write():85] open: /home/ant/ssrl/ssrl/outputs/2025-02-04/16-27-02/wandb/run-20250204_162704-6olp3lje/run-6olp3lje.wandb
+2025-02-04 16:27:05,040 DEBUG   SenderThread:53340 [sender.py:send():369] send: header
+2025-02-04 16:27:05,073 DEBUG   SenderThread:53340 [sender.py:send():369] send: run
+2025-02-04 16:27:05,651 DEBUG   HandlerThread:53340 [handler.py:handle_request():144] handle_request: shutdown
+2025-02-04 16:27:05,652 INFO    HandlerThread:53340 [handler.py:finish():854] shutting down handler
+2025-02-04 16:27:05,667 INFO    SenderThread:53340 [dir_watcher.py:__init__():211] watching files in: /home/ant/ssrl/ssrl/outputs/2025-02-04/16-27-02/wandb/run-20250204_162704-6olp3lje/files
+2025-02-04 16:27:05,667 INFO    SenderThread:53340 [sender.py:_start_run_threads():1100] run started: 6olp3lje with start time 1738675625.035108
+2025-02-04 16:27:05,667 INFO    SenderThread:53340 [sender.py:finish():1526] shutting down sender
+2025-02-04 16:27:05,667 INFO    SenderThread:53340 [dir_watcher.py:finish():359] shutting down directory watcher
+2025-02-04 16:27:06,074 INFO    WriterThread:53340 [datastore.py:close():298] close: /home/ant/ssrl/ssrl/outputs/2025-02-04/16-27-02/wandb/run-20250204_162704-6olp3lje/run-6olp3lje.wandb
+2025-02-04 16:27:06,667 INFO    SenderThread:53340 [dir_watcher.py:finish():389] scan: /home/ant/ssrl/ssrl/outputs/2025-02-04/16-27-02/wandb/run-20250204_162704-6olp3lje/files
+2025-02-04 16:27:06,668 INFO    SenderThread:53340 [dir_watcher.py:finish():403] scan save: /home/ant/ssrl/ssrl/outputs/2025-02-04/16-27-02/wandb/run-20250204_162704-6olp3lje/files/config.yaml config.yaml
+2025-02-04 16:27:06,668 INFO    SenderThread:53340 [file_pusher.py:finish():159] shutting down file pusher
+2025-02-04 16:27:06,668 INFO    SenderThread:53340 [file_pusher.py:join():164] waiting for file pusher
+2025-02-04 16:27:07,457 INFO    wandb-upload_0:53340 [upload_job.py:push():133] Uploaded file /home/ant/ssrl/ssrl/outputs/2025-02-04/16-27-02/wandb/run-20250204_162704-6olp3lje/files/config.yaml
