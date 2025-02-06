@@ -175,7 +175,7 @@ class Go1GoFast(RlwamEnv):
 
         super().__init__(sys=sys, backend=backend, **kwargs)
 
-        self._period = 0.50  # period of the gait cycle (sec)
+        self._period = 0.5  # period of the gait cycle (sec)
         self._forward_cmd_vel = jp.mean(jp.array(forward_cmd_vel_range))
         self._initial_yaw_range = initial_yaw_range
         if contact_time_const_range is None:
@@ -276,9 +276,9 @@ class Go1GoFast(RlwamEnv):
         self._ac_Kd_idxs = jp.s_[21:33]
 
         # define action space
-        dx = 0.25
-        dy = 0.15
-        dKp = 50.0
+        dx = 0.2
+        dy = 0.1
+        dKp = 30.0
         dKd = 2.0
         self._ac_space = jp.ones((self.action_size, 2))
         self._ac_space = self._ac_space.at[:, 0].set(-1.)
@@ -1082,9 +1082,9 @@ class Go1GoFast(RlwamEnv):
                         jp.tile(Go1Utils.LOWER_JOINT_LIMITS, 4),
                         jp.tile(Go1Utils.UPPER_JOINT_LIMITS, 4))
         qd_des = jp.zeros((12,))
-        mult = 1.0
-        Kp = jp.tile(jp.array([60, 60, 60]), 4) * mult
-        Kd = jp.tile(jp.array([3.5, 3.5, 3.5]), 4)
+        mult = 1.4
+        Kp = jp.tile(jp.array([80, 80, 80]), 4) * mult
+        Kd = jp.tile(jp.array([2.5, 2.5, 2.5]), 4)
 
         if self._gains_in_action_space:
             Kp += action[self._ac_Kp_idxs]

@@ -16,10 +16,10 @@ class Go1Utils:
     THIGH_OFFSET = 0.083
     """constant: the length of the thigh motor"""
 
-    LEG_OFFSET_X = 0.25
+    LEG_OFFSET_X = 0.2399
     """constant: x distance from the robot COM to the leg base."""
 
-    LEG_OFFSET_Y = 0.12
+    LEG_OFFSET_Y = 0.051
     """constant: y distance from the robot COM to the leg base."""
 
     THIGH_LENGTH = 0.25
@@ -29,16 +29,25 @@ class Go1Utils:
     """constant: length of the calf"""
 
     STANDING_FOOT_POSITIONS = jp.array([
-        0.2399, -0.203, -0.45,
-        0.2399, 0.203, -0.45,
-        -0.2399, -0.203, -0.45,
-        -0.2399, 0.203, -0.45,
+        0.2172, -0.134, -0.3791,
+        0.2172, 0.134, -0.3791,
+        -0.2172, -0.134, -0.3791,
+        -0.2172, 0.134, -0.3791
     ])
+
+    # Ползает, не падает 
+    # STANDING_FOOT_POSITIONS = jp.array([ 
+    #     0.231425, -0.203, -0.36,
+    #     0.231425, 0.203, -0.36,
+    #     -0.231425, -0.203, -0.36,
+    #     -0.231425, 0.203, -0.36
+    # ])
 
     STANDING_JOINT_ANGLES_FR = jp.array([-0.01014303, 0.65, -1.42])
     STANDING_JOINT_ANGLES_FL = jp.array([0.01014303, 0.65, -1.42])
     STANDING_JOINT_ANGLES_RR = jp.array([-0.01014303, 0.65, -1.42])
     STANDING_JOINT_ANGLES_RL = jp.array([0.01014303, 0.65, -1.42])
+
 
     ALL_STANDING_JOINT_ANGLES = jp.concatenate([
         STANDING_JOINT_ANGLES_FR,
@@ -47,14 +56,14 @@ class Go1Utils:
         STANDING_JOINT_ANGLES_RL
     ])
 
-    JOINT_LIMIT_PAD = 0.2
+    JOINT_LIMIT_PAD = 0.1
     """constant: the amount to pad the joint limits"""
 
-    LOWER_JOINT_LIMITS = jp.array([-1.047, -0.663, -2.721]) + JOINT_LIMIT_PAD
+    LOWER_JOINT_LIMITS = jp.array([-0.873, -0.524, -2.775]) + JOINT_LIMIT_PAD
     """constant: the lower joint angle limits for a leg, obtained from
     unitree_legged_sdk/include/go1_const.h, and offset by JOINT_LIMIT_PAD"""
 
-    UPPER_JOINT_LIMITS = jp.array([1.047, 2.966, -0.837]) - JOINT_LIMIT_PAD
+    UPPER_JOINT_LIMITS = jp.array([1.047, 3.927, -0.611]) - JOINT_LIMIT_PAD
     """constant: the upper joint angle limits for a leg, obtained from
     unitree_legged_sdk/include/go1_const.h, and offset by JOINT_LIMIT_PAD"""
 

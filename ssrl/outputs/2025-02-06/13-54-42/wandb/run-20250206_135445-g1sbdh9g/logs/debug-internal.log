@@ -1,0 +1,733 @@
+2025-02-06 13:54:45,353 INFO    StreamThr :15995 [internal.py:wandb_internal():86] W&B internal server running at pid: 15995, started at: 2025-02-06 13:54:45.353352
+2025-02-06 13:54:45,354 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status
+2025-02-06 13:54:45,444 INFO    WriterThread:15995 [datastore.py:open_for_write():85] open: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/run-g1sbdh9g.wandb
+2025-02-06 13:54:45,444 DEBUG   SenderThread:15995 [sender.py:send():369] send: header
+2025-02-06 13:54:45,475 DEBUG   SenderThread:15995 [sender.py:send():369] send: run
+2025-02-06 13:54:46,472 INFO    SenderThread:15995 [dir_watcher.py:__init__():211] watching files in: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files
+2025-02-06 13:54:46,472 INFO    SenderThread:15995 [sender.py:_start_run_threads():1100] run started: g1sbdh9g with start time 1738839285.438371
+2025-02-06 13:54:46,475 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: summary_record
+2025-02-06 13:54:46,475 INFO    SenderThread:15995 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2025-02-06 13:54:46,478 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: check_version
+2025-02-06 13:54:46,478 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: check_version
+2025-02-06 13:54:46,982 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: run_start
+2025-02-06 13:54:46,991 DEBUG   HandlerThread:15995 [system_info.py:__init__():31] System info init
+2025-02-06 13:54:46,991 DEBUG   HandlerThread:15995 [system_info.py:__init__():46] System info init done
+2025-02-06 13:54:46,991 INFO    HandlerThread:15995 [system_monitor.py:start():181] Starting system monitor
+2025-02-06 13:54:46,991 INFO    SystemMonitor:15995 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2025-02-06 13:54:46,991 INFO    HandlerThread:15995 [system_monitor.py:probe():201] Collecting system info
+2025-02-06 13:54:46,991 INFO    SystemMonitor:15995 [interfaces.py:start():190] Started cpu monitoring
+2025-02-06 13:54:46,992 INFO    SystemMonitor:15995 [interfaces.py:start():190] Started disk monitoring
+2025-02-06 13:54:46,992 INFO    SystemMonitor:15995 [interfaces.py:start():190] Started gpu monitoring
+2025-02-06 13:54:46,992 INFO    SystemMonitor:15995 [interfaces.py:start():190] Started memory monitoring
+2025-02-06 13:54:46,993 INFO    SystemMonitor:15995 [interfaces.py:start():190] Started network monitoring
+2025-02-06 13:54:47,002 DEBUG   HandlerThread:15995 [system_info.py:probe():195] Probing system
+2025-02-06 13:54:47,009 DEBUG   HandlerThread:15995 [system_info.py:_probe_git():180] Probing git
+2025-02-06 13:54:47,021 DEBUG   HandlerThread:15995 [system_info.py:_probe_git():188] Probing git done
+2025-02-06 13:54:47,021 DEBUG   HandlerThread:15995 [system_info.py:probe():240] Probing system done
+2025-02-06 13:54:47,021 DEBUG   HandlerThread:15995 [system_monitor.py:probe():210] {'os': 'Linux-6.8.0-52-generic-x86_64-with-glibc2.39', 'python': '3.9.21', 'heartbeatAt': '2025-02-06T10:54:47.002605', 'startedAt': '2025-02-06T10:54:45.346564', 'docker': None, 'cuda': None, 'args': ('render_epoch_interval=1',), 'state': 'running', 'program': '/home/ant/ssrl/ssrl/scripts/aliengo_train.py', 'codePath': 'ssrl/scripts/aliengo_train.py', 'git': {'remote': 'git@github.com:antsrt/test_ssrl.git', 'commit': '48f8e9a765fce9cbe6ed977961cde282d0c92a52'}, 'email': 'an.tsaritsin@gamil.com', 'root': '/home/ant/ssrl', 'host': 'hellmachine', 'username': 'ant', 'executable': '/home/ant/miniforge3/envs/ssrl/bin/python', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 3567.983916666666, 'min': 400.0, 'max': 4603.0}, 'cpu_freq_per_core': [{'current': 4123.906, 'min': 400.0, 'max': 4603.0}, {'current': 4198.8, 'min': 400.0, 'max': 4603.0}, {'current': 3421.606, 'min': 400.0, 'max': 4603.0}, {'current': 3071.936, 'min': 400.0, 'max': 4603.0}, {'current': 4327.467, 'min': 400.0, 'max': 4603.0}, {'current': 400.0, 'min': 400.0, 'max': 4603.0}, {'current': 2913.663, 'min': 400.0, 'max': 4603.0}, {'current': 4226.843, 'min': 400.0, 'max': 4603.0}, {'current': 3287.865, 'min': 400.0, 'max': 4603.0}, {'current': 4341.037, 'min': 400.0, 'max': 4603.0}, {'current': 4318.888, 'min': 400.0, 'max': 4603.0}, {'current': 4341.45, 'min': 400.0, 'max': 4603.0}], 'disk': {'total': 114.6000747680664, 'used': 87.34900283813477}, 'gpu': 'NVIDIA GeForce RTX 4060 Laptop GPU', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4060 Laptop GPU', 'memory_total': 8585740288}], 'memory': {'total': 14.83160400390625}}
+2025-02-06 13:54:47,021 INFO    HandlerThread:15995 [system_monitor.py:probe():211] Finished collecting system info
+2025-02-06 13:54:47,021 INFO    HandlerThread:15995 [system_monitor.py:probe():214] Publishing system info
+2025-02-06 13:54:47,021 DEBUG   HandlerThread:15995 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2025-02-06 13:54:47,022 DEBUG   HandlerThread:15995 [system_info.py:_save_pip():67] Saving pip packages done
+2025-02-06 13:54:47,022 DEBUG   HandlerThread:15995 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2025-02-06 13:54:47,474 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_created():272] file/dir created: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/wandb-summary.json
+2025-02-06 13:54:47,474 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_created():272] file/dir created: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/conda-environment.yaml
+2025-02-06 13:54:47,475 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_created():272] file/dir created: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/requirements.txt
+2025-02-06 13:54:48,360 DEBUG   HandlerThread:15995 [system_info.py:_save_conda():86] Saving conda packages done
+2025-02-06 13:54:48,361 INFO    HandlerThread:15995 [system_monitor.py:probe():216] Finished publishing system info
+2025-02-06 13:54:48,363 DEBUG   SenderThread:15995 [sender.py:send():369] send: files
+2025-02-06 13:54:48,363 INFO    SenderThread:15995 [sender.py:_save_file():1354] saving file wandb-metadata.json with policy now
+2025-02-06 13:54:48,367 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:54:48,367 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:54:48,473 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/conda-environment.yaml
+2025-02-06 13:54:48,473 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_created():272] file/dir created: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/wandb-metadata.json
+2025-02-06 13:54:48,793 DEBUG   SenderThread:15995 [sender.py:send():369] send: telemetry
+2025-02-06 13:54:49,023 INFO    wandb-upload_0:15995 [upload_job.py:push():133] Uploaded file /tmp/tmpl202ooltwandb/th9eoz3w-wandb-metadata.json
+2025-02-06 13:54:49,473 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_created():272] file/dir created: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 13:54:50,794 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:54:51,474 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 13:54:55,475 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 13:54:55,809 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:54:57,476 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 13:55:00,809 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:55:03,636 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:55:03,637 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:55:05,837 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:55:10,838 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:55:15,842 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:55:16,481 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/config.yaml
+2025-02-06 13:55:18,443 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:55:18,443 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:55:21,670 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:55:26,671 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:55:31,671 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:55:33,443 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:55:33,443 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:55:37,665 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:55:42,666 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:55:46,993 DEBUG   SystemMonitor:15995 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2025-02-06 13:55:46,994 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 13:55:47,995 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:55:48,443 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:55:48,444 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:55:53,636 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:55:53,874 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: partial_history
+2025-02-06 13:55:53,876 DEBUG   SenderThread:15995 [sender.py:send():369] send: history
+2025-02-06 13:55:53,877 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: summary_record
+2025-02-06 13:55:53,880 INFO    SenderThread:15995 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2025-02-06 13:55:54,493 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/wandb-summary.json
+2025-02-06 13:55:55,493 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 13:55:58,881 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:56:03,443 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:56:03,444 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:56:04,711 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:56:09,712 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:56:14,712 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:56:16,995 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 13:56:18,444 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:56:18,444 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:56:20,673 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:56:25,673 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:56:30,674 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:56:33,444 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:56:33,444 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:56:35,738 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:56:40,739 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:56:45,739 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:56:46,996 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 13:56:48,444 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:56:48,444 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:56:51,627 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:56:56,628 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:57:01,628 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:57:03,444 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:57:03,444 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:57:07,095 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:57:07,515 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 13:57:12,095 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:57:16,996 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 13:57:17,997 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:57:18,042 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: partial_history
+2025-02-06 13:57:18,043 DEBUG   SenderThread:15995 [sender.py:send():369] send: files
+2025-02-06 13:57:18,043 INFO    SenderThread:15995 [sender.py:_save_file():1354] saving file media/html/Render at step 0_1_efd1cb1ff1707b92df15.html with policy now
+2025-02-06 13:57:18,043 DEBUG   SenderThread:15995 [sender.py:send():369] send: history
+2025-02-06 13:57:18,043 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: summary_record
+2025-02-06 13:57:18,044 INFO    SenderThread:15995 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2025-02-06 13:57:18,444 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:57:18,444 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:57:18,519 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/wandb-summary.json
+2025-02-06 13:57:18,519 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_created():272] file/dir created: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/media/html/Render at step 0_1_efd1cb1ff1707b92df15.html
+2025-02-06 13:57:18,519 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_created():272] file/dir created: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/media/html
+2025-02-06 13:57:18,520 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_created():272] file/dir created: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/media
+2025-02-06 13:57:23,655 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:57:25,834 INFO    wandb-upload_0:15995 [upload_job.py:push():133] Uploaded file /tmp/tmpl202ooltwandb/gpttl76h-media/html/Render at step 0_1_efd1cb1ff1707b92df15.html
+2025-02-06 13:57:28,656 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:57:31,187 INFO    wandb-upload_0:15995 [upload_job.py:push():133] Uploaded file /tmp/tmpl202ooltwandb/1c35sp6o-media/html/Render at step 0_1_efd1cb1ff1707b92df15.html
+2025-02-06 13:57:33,500 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:57:33,500 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:57:33,782 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:57:38,782 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:57:43,783 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:57:46,997 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 13:57:48,481 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:57:48,482 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:57:49,699 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:57:54,699 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:57:59,700 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:58:03,481 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:58:03,482 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:58:04,754 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:58:09,754 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:58:14,755 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:58:16,997 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 13:58:18,481 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:58:18,482 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:58:19,805 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:58:25,544 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 13:58:25,687 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:58:30,687 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:58:33,501 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:58:33,501 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:58:35,758 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:58:40,759 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:58:45,760 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:58:46,997 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 13:58:48,487 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:58:48,489 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:58:50,809 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:58:55,810 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:59:00,811 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:59:03,487 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:59:03,488 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:59:06,695 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:59:11,696 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:59:16,696 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:59:16,999 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 13:59:18,488 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:59:18,488 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:59:21,762 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:59:26,763 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:59:31,764 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:59:33,488 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:59:33,488 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:59:37,704 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:59:43,417 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:59:43,575 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 13:59:45,576 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 13:59:47,000 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 13:59:47,576 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 13:59:48,488 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 13:59:48,488 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 13:59:48,818 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:59:49,577 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 13:59:51,578 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 13:59:53,579 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 13:59:54,212 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 13:59:55,580 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 13:59:57,581 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 13:59:59,582 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 13:59:59,642 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:00:01,583 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:03,488 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:00:03,488 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:00:03,583 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:05,536 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:00:05,584 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:07,585 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:09,586 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:11,432 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:00:11,587 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:13,588 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:15,589 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:17,000 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 14:00:17,001 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:00:17,590 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:18,488 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:00:18,488 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:00:19,590 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:21,591 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:22,228 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:00:23,592 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:25,593 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:27,594 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:27,669 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:00:29,595 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:31,596 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:33,488 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:00:33,489 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:00:33,597 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:33,771 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:00:35,598 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:37,598 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:39,533 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:00:39,599 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:41,600 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:43,601 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:45,460 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:00:45,602 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:47,000 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 14:00:47,603 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:48,488 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:00:48,489 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:00:49,604 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:51,385 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:00:51,605 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:53,606 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:55,607 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:57,309 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:00:57,608 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:00:59,609 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:01,610 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:03,231 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:01:03,488 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:01:03,489 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:01:03,611 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:05,612 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:07,612 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:09,162 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:01:09,613 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:11,614 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:13,615 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:15,092 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:01:15,616 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:17,001 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 14:01:17,616 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:18,488 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:01:18,489 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:01:19,617 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:21,012 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:01:21,618 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:23,619 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:25,620 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:26,936 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:01:27,621 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:29,622 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:31,622 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:32,862 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:01:33,489 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:01:33,489 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:01:33,624 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:35,624 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:37,625 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:38,786 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:01:39,626 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:41,627 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:43,628 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:44,707 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:01:45,629 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:47,002 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 14:01:47,630 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:48,489 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:01:48,489 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:01:49,631 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:50,672 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:01:51,632 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:53,633 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:55,634 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:56,558 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:01:57,634 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:01:59,635 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:01,636 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:02,478 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:02:03,489 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:02:03,489 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:02:03,637 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:05,638 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:07,639 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:08,409 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:02:09,639 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:11,640 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:13,641 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:14,334 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:02:15,642 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:17,002 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 14:02:17,643 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:18,489 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:02:18,489 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:02:19,644 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:20,267 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:02:21,645 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:23,646 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:25,646 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:26,202 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:02:27,647 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:29,648 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:31,649 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:32,124 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:02:33,489 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:02:33,489 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:02:33,649 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:35,650 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:37,651 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:38,053 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:02:39,652 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:41,653 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:43,654 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:43,975 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:02:45,655 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:47,003 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 14:02:47,656 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:48,489 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:02:48,490 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:02:49,657 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:49,903 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:02:51,658 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:53,659 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:55,660 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:55,826 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:02:57,661 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:02:59,662 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:01,663 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:01,750 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:03:03,489 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:03:03,490 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:03:03,663 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:05,664 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:07,665 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:07,673 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:03:09,665 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:11,667 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:13,602 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:03:13,667 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:15,668 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:17,004 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 14:03:17,669 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:18,489 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:03:18,490 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:03:18,725 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:03:19,670 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:21,671 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:23,672 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:23,971 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:03:25,673 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:27,674 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:29,674 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:29,895 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:03:31,675 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:33,490 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:03:33,490 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:03:33,676 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:35,677 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:35,819 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:03:37,678 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:39,678 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:41,679 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:41,752 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:03:43,680 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:45,681 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:47,004 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 14:03:47,005 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:03:47,682 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:48,489 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:03:48,490 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:03:49,683 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:51,683 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:52,130 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:03:53,684 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:55,685 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:57,686 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:03:58,058 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:03:59,686 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:01,687 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:03,490 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:04:03,490 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:04:03,688 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:03,696 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:04:05,689 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:07,690 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:08,916 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:04:09,691 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:11,691 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:13,692 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:14,357 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:04:15,693 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:17,005 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 14:04:17,694 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:18,490 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:04:18,490 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:04:19,695 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:20,326 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:04:21,696 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:23,696 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:25,697 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:26,220 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:04:27,698 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:29,699 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:31,700 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:32,146 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:04:33,490 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:04:33,490 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:04:33,700 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:35,701 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:37,702 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:38,073 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:04:39,703 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:41,704 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:43,705 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:43,996 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:04:45,706 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:47,006 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 14:04:47,707 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:48,490 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:04:48,491 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:04:49,709 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:49,920 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:04:51,709 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:53,710 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:55,711 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:55,845 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:04:57,712 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:04:59,712 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:01,713 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:01,773 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:05:03,490 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:05:03,490 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:05:03,714 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:05,715 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:07,705 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:05:07,716 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:09,716 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:11,717 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:13,628 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:05:13,718 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:15,719 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:17,006 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 14:05:17,720 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:18,490 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:05:18,490 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:05:18,713 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:05:19,721 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:21,722 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:23,722 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:24,008 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:05:25,723 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:27,724 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:29,725 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:29,931 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:05:31,726 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:33,490 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:05:33,490 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:05:33,727 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:35,727 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:35,857 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:05:37,728 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:39,729 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:41,730 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:41,788 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:05:43,730 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:45,731 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:47,007 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 14:05:47,007 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:05:47,732 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:48,490 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:05:48,491 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:05:49,733 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:51,734 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:52,170 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:05:53,735 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:55,736 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:57,736 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:05:58,096 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:05:59,737 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:01,738 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:03,490 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:06:03,491 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:06:03,734 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:06:03,739 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:05,739 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:07,741 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:08,959 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:06:09,741 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:11,742 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:13,743 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:14,406 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:06:15,744 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:17,007 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 14:06:17,745 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:18,491 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:06:18,491 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:06:19,746 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:20,375 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:06:21,747 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:23,748 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:25,749 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:26,259 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:06:27,750 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:29,751 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:31,751 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:32,189 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:06:33,491 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:06:33,491 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:06:33,752 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:35,753 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:37,754 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:38,112 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:06:39,755 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:41,756 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:43,757 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:44,041 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:06:45,758 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:47,007 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 14:06:47,758 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:48,491 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:06:48,491 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:06:49,759 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:49,963 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:06:51,760 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:53,761 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:55,762 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:55,886 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:06:57,763 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:06:59,764 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:01,764 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:01,813 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:07:03,491 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:07:03,491 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:07:03,766 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:05,767 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:07,744 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:07:07,768 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:09,769 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:11,769 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:13,669 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:07:13,770 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:15,771 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:17,008 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 14:07:17,772 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:18,491 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:07:18,491 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:07:18,714 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:07:19,773 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:21,774 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:23,774 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:24,039 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:07:25,775 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:27,776 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:29,778 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:29,970 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:07:31,778 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:33,491 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:07:33,492 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:07:33,779 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:35,780 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:35,895 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:07:37,781 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:39,781 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:41,782 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:41,823 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:07:43,783 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:45,784 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:47,009 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 14:07:47,009 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:07:47,784 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:48,491 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:07:48,492 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:07:49,785 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:51,786 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:52,199 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:07:53,786 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:55,787 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:57,788 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:07:58,129 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:07:59,789 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:08:01,790 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:08:03,491 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-06 14:08:03,492 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: stop_status
+2025-02-06 14:08:03,777 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:08:03,791 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:08:05,792 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:08:06,025 DEBUG   SenderThread:15995 [sender.py:send():369] send: exit
+2025-02-06 14:08:06,025 INFO    SenderThread:15995 [sender.py:send_exit():574] handling exit code: 255
+2025-02-06 14:08:06,025 INFO    SenderThread:15995 [sender.py:send_exit():576] handling runtime: 799
+2025-02-06 14:08:06,025 INFO    SenderThread:15995 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2025-02-06 14:08:06,025 INFO    SenderThread:15995 [sender.py:send_exit():582] send defer
+2025-02-06 14:08:06,025 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: defer
+2025-02-06 14:08:06,026 INFO    HandlerThread:15995 [handler.py:handle_request_defer():170] handle defer: 0
+2025-02-06 14:08:06,026 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: defer
+2025-02-06 14:08:06,026 INFO    SenderThread:15995 [sender.py:send_request_defer():598] handle sender defer: 0
+2025-02-06 14:08:06,026 INFO    SenderThread:15995 [sender.py:transition_state():602] send defer: 1
+2025-02-06 14:08:06,026 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: defer
+2025-02-06 14:08:06,026 INFO    HandlerThread:15995 [handler.py:handle_request_defer():170] handle defer: 1
+2025-02-06 14:08:06,026 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: defer
+2025-02-06 14:08:06,026 INFO    SenderThread:15995 [sender.py:send_request_defer():598] handle sender defer: 1
+2025-02-06 14:08:06,026 INFO    SenderThread:15995 [sender.py:transition_state():602] send defer: 2
+2025-02-06 14:08:06,026 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: defer
+2025-02-06 14:08:06,026 INFO    HandlerThread:15995 [handler.py:handle_request_defer():170] handle defer: 2
+2025-02-06 14:08:06,026 INFO    HandlerThread:15995 [system_monitor.py:finish():190] Stopping system monitor
+2025-02-06 14:08:06,026 DEBUG   SystemMonitor:15995 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2025-02-06 14:08:06,026 DEBUG   SystemMonitor:15995 [system_monitor.py:_start():170] Publishing last batch of metrics
+2025-02-06 14:08:06,027 INFO    HandlerThread:15995 [interfaces.py:finish():202] Joined cpu monitor
+2025-02-06 14:08:06,027 INFO    HandlerThread:15995 [interfaces.py:finish():202] Joined disk monitor
+2025-02-06 14:08:06,072 INFO    HandlerThread:15995 [interfaces.py:finish():202] Joined gpu monitor
+2025-02-06 14:08:06,072 INFO    HandlerThread:15995 [interfaces.py:finish():202] Joined memory monitor
+2025-02-06 14:08:06,072 INFO    HandlerThread:15995 [interfaces.py:finish():202] Joined network monitor
+2025-02-06 14:08:06,073 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: defer
+2025-02-06 14:08:06,073 INFO    SenderThread:15995 [sender.py:send_request_defer():598] handle sender defer: 2
+2025-02-06 14:08:06,073 INFO    SenderThread:15995 [sender.py:transition_state():602] send defer: 3
+2025-02-06 14:08:06,073 DEBUG   SenderThread:15995 [sender.py:send():369] send: stats
+2025-02-06 14:08:06,073 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: defer
+2025-02-06 14:08:06,073 INFO    HandlerThread:15995 [handler.py:handle_request_defer():170] handle defer: 3
+2025-02-06 14:08:06,074 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: defer
+2025-02-06 14:08:06,074 INFO    SenderThread:15995 [sender.py:send_request_defer():598] handle sender defer: 3
+2025-02-06 14:08:06,074 INFO    SenderThread:15995 [sender.py:transition_state():602] send defer: 4
+2025-02-06 14:08:06,074 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: defer
+2025-02-06 14:08:06,074 INFO    HandlerThread:15995 [handler.py:handle_request_defer():170] handle defer: 4
+2025-02-06 14:08:06,074 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: defer
+2025-02-06 14:08:06,074 INFO    SenderThread:15995 [sender.py:send_request_defer():598] handle sender defer: 4
+2025-02-06 14:08:06,074 INFO    SenderThread:15995 [sender.py:transition_state():602] send defer: 5
+2025-02-06 14:08:06,074 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: defer
+2025-02-06 14:08:06,074 INFO    HandlerThread:15995 [handler.py:handle_request_defer():170] handle defer: 5
+2025-02-06 14:08:06,075 DEBUG   SenderThread:15995 [sender.py:send():369] send: summary
+2025-02-06 14:08:06,075 INFO    SenderThread:15995 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2025-02-06 14:08:06,075 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: defer
+2025-02-06 14:08:06,075 INFO    SenderThread:15995 [sender.py:send_request_defer():598] handle sender defer: 5
+2025-02-06 14:08:06,075 INFO    SenderThread:15995 [sender.py:transition_state():602] send defer: 6
+2025-02-06 14:08:06,075 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: defer
+2025-02-06 14:08:06,075 INFO    HandlerThread:15995 [handler.py:handle_request_defer():170] handle defer: 6
+2025-02-06 14:08:06,075 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: defer
+2025-02-06 14:08:06,075 INFO    SenderThread:15995 [sender.py:send_request_defer():598] handle sender defer: 6
+2025-02-06 14:08:06,075 INFO    SenderThread:15995 [sender.py:transition_state():602] send defer: 7
+2025-02-06 14:08:06,075 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:08:06,075 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: defer
+2025-02-06 14:08:06,075 INFO    HandlerThread:15995 [handler.py:handle_request_defer():170] handle defer: 7
+2025-02-06 14:08:06,076 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: defer
+2025-02-06 14:08:06,076 INFO    SenderThread:15995 [sender.py:send_request_defer():598] handle sender defer: 7
+2025-02-06 14:08:06,792 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/wandb-summary.json
+2025-02-06 14:08:07,025 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: poll_exit
+2025-02-06 14:08:08,033 INFO    SenderThread:15995 [sender.py:transition_state():602] send defer: 8
+2025-02-06 14:08:08,033 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: poll_exit
+2025-02-06 14:08:08,034 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: defer
+2025-02-06 14:08:08,034 INFO    HandlerThread:15995 [handler.py:handle_request_defer():170] handle defer: 8
+2025-02-06 14:08:08,034 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: defer
+2025-02-06 14:08:08,034 INFO    SenderThread:15995 [sender.py:send_request_defer():598] handle sender defer: 8
+2025-02-06 14:08:08,034 INFO    SenderThread:15995 [job_builder.py:build():240] Attempting to build job artifact
+2025-02-06 14:08:08,034 INFO    SenderThread:15995 [job_builder.py:build():264] is repo sourced job
+2025-02-06 14:08:08,036 INFO    SenderThread:15995 [job_builder.py:build():305] adding wandb-job metadata file
+2025-02-06 14:08:08,042 INFO    SenderThread:15995 [sender.py:transition_state():602] send defer: 9
+2025-02-06 14:08:08,043 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: defer
+2025-02-06 14:08:08,043 INFO    HandlerThread:15995 [handler.py:handle_request_defer():170] handle defer: 9
+2025-02-06 14:08:08,043 DEBUG   SenderThread:15995 [sender.py:send():369] send: artifact
+2025-02-06 14:08:08,793 INFO    Thread-12 :15995 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:08:08,926 INFO    SenderThread:15995 [sender.py:send_artifact():1450] sent artifact job-git_github.com_antsrt_test_ssrl.git_ssrl_scripts_aliengo_train.py - {'id': 'QXJ0aWZhY3Q6MTQ5MTY2MjIxNQ==', 'digest': '77a05ae0d6f8b43ecfc58872ce766c3a', 'state': 'COMMITTED', 'aliases': [{'artifactCollectionName': 'job-git_github.com_antsrt_test_ssrl.git_ssrl_scripts_aliengo_train.py', 'alias': 'latest'}, {'artifactCollectionName': 'job-git_github.com_antsrt_test_ssrl.git_ssrl_scripts_aliengo_train.py', 'alias': 'v5'}], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjU1Njk4NTgxMw==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTQ5MTY2MjIxNQ==', 'versionIndex': 5}}, 'version': 'v5'}
+2025-02-06 14:08:08,926 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: defer
+2025-02-06 14:08:08,926 INFO    SenderThread:15995 [sender.py:send_request_defer():598] handle sender defer: 9
+2025-02-06 14:08:08,926 INFO    SenderThread:15995 [dir_watcher.py:finish():359] shutting down directory watcher
+2025-02-06 14:08:09,794 INFO    SenderThread:15995 [dir_watcher.py:finish():389] scan: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files
+2025-02-06 14:08:09,794 INFO    SenderThread:15995 [dir_watcher.py:finish():403] scan save: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log output.log
+2025-02-06 14:08:09,795 INFO    SenderThread:15995 [dir_watcher.py:finish():403] scan save: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/conda-environment.yaml conda-environment.yaml
+2025-02-06 14:08:09,795 INFO    SenderThread:15995 [dir_watcher.py:finish():403] scan save: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/wandb-summary.json wandb-summary.json
+2025-02-06 14:08:09,799 INFO    SenderThread:15995 [dir_watcher.py:finish():403] scan save: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/wandb-metadata.json wandb-metadata.json
+2025-02-06 14:08:09,799 INFO    SenderThread:15995 [dir_watcher.py:finish():403] scan save: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/requirements.txt requirements.txt
+2025-02-06 14:08:09,801 INFO    SenderThread:15995 [dir_watcher.py:finish():403] scan save: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/config.yaml config.yaml
+2025-02-06 14:08:09,805 INFO    SenderThread:15995 [dir_watcher.py:finish():403] scan save: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/media/html/Render at step 0_1_efd1cb1ff1707b92df15.html media/html/Render at step 0_1_efd1cb1ff1707b92df15.html
+2025-02-06 14:08:09,805 INFO    SenderThread:15995 [sender.py:transition_state():602] send defer: 10
+2025-02-06 14:08:09,805 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: defer
+2025-02-06 14:08:09,805 INFO    HandlerThread:15995 [handler.py:handle_request_defer():170] handle defer: 10
+2025-02-06 14:08:09,805 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: defer
+2025-02-06 14:08:09,805 INFO    SenderThread:15995 [sender.py:send_request_defer():598] handle sender defer: 10
+2025-02-06 14:08:09,805 INFO    SenderThread:15995 [file_pusher.py:finish():159] shutting down file pusher
+2025-02-06 14:08:10,786 INFO    wandb-upload_1:15995 [upload_job.py:push():133] Uploaded file /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/output.log
+2025-02-06 14:08:12,026 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: keepalive
+2025-02-06 14:08:13,215 INFO    wandb-upload_3:15995 [upload_job.py:push():133] Uploaded file /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/requirements.txt
+2025-02-06 14:08:13,415 INFO    wandb-upload_2:15995 [upload_job.py:push():133] Uploaded file /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/wandb-summary.json
+2025-02-06 14:08:13,420 INFO    wandb-upload_0:15995 [upload_job.py:push():133] Uploaded file /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/conda-environment.yaml
+2025-02-06 14:08:13,444 INFO    wandb-upload_4:15995 [upload_job.py:push():133] Uploaded file /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/files/config.yaml
+2025-02-06 14:08:13,644 INFO    Thread-11 :15995 [sender.py:transition_state():602] send defer: 11
+2025-02-06 14:08:13,645 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: defer
+2025-02-06 14:08:13,645 INFO    HandlerThread:15995 [handler.py:handle_request_defer():170] handle defer: 11
+2025-02-06 14:08:13,645 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: defer
+2025-02-06 14:08:13,645 INFO    SenderThread:15995 [sender.py:send_request_defer():598] handle sender defer: 11
+2025-02-06 14:08:13,645 INFO    SenderThread:15995 [file_pusher.py:join():164] waiting for file pusher
+2025-02-06 14:08:13,645 INFO    SenderThread:15995 [sender.py:transition_state():602] send defer: 12
+2025-02-06 14:08:13,645 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: defer
+2025-02-06 14:08:13,645 INFO    HandlerThread:15995 [handler.py:handle_request_defer():170] handle defer: 12
+2025-02-06 14:08:13,646 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: defer
+2025-02-06 14:08:13,646 INFO    SenderThread:15995 [sender.py:send_request_defer():598] handle sender defer: 12
+2025-02-06 14:08:14,182 INFO    SenderThread:15995 [sender.py:transition_state():602] send defer: 13
+2025-02-06 14:08:14,182 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: defer
+2025-02-06 14:08:14,182 INFO    HandlerThread:15995 [handler.py:handle_request_defer():170] handle defer: 13
+2025-02-06 14:08:14,182 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: status_report
+2025-02-06 14:08:14,182 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: defer
+2025-02-06 14:08:14,182 INFO    SenderThread:15995 [sender.py:send_request_defer():598] handle sender defer: 13
+2025-02-06 14:08:14,182 INFO    SenderThread:15995 [sender.py:transition_state():602] send defer: 14
+2025-02-06 14:08:14,183 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: defer
+2025-02-06 14:08:14,183 INFO    HandlerThread:15995 [handler.py:handle_request_defer():170] handle defer: 14
+2025-02-06 14:08:14,183 DEBUG   SenderThread:15995 [sender.py:send():369] send: final
+2025-02-06 14:08:14,183 DEBUG   SenderThread:15995 [sender.py:send():369] send: footer
+2025-02-06 14:08:14,183 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: defer
+2025-02-06 14:08:14,183 INFO    SenderThread:15995 [sender.py:send_request_defer():598] handle sender defer: 14
+2025-02-06 14:08:14,183 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: poll_exit
+2025-02-06 14:08:14,183 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: poll_exit
+2025-02-06 14:08:14,184 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: server_info
+2025-02-06 14:08:14,184 DEBUG   SenderThread:15995 [sender.py:send_request():396] send_request: server_info
+2025-02-06 14:08:14,184 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: get_summary
+2025-02-06 14:08:14,186 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: sampled_history
+2025-02-06 14:08:14,342 INFO    MainThread:15995 [wandb_run.py:_footer_history_summary_info():3464] rendering history
+2025-02-06 14:08:14,343 INFO    MainThread:15995 [wandb_run.py:_footer_history_summary_info():3496] rendering summary
+2025-02-06 14:08:14,343 INFO    MainThread:15995 [wandb_run.py:_footer_sync_info():3423] logging synced files
+2025-02-06 14:08:14,343 DEBUG   HandlerThread:15995 [handler.py:handle_request():144] handle_request: shutdown
+2025-02-06 14:08:14,343 INFO    HandlerThread:15995 [handler.py:finish():854] shutting down handler
+2025-02-06 14:08:15,184 INFO    WriterThread:15995 [datastore.py:close():298] close: /home/ant/ssrl/ssrl/outputs/2025-02-06/13-54-42/wandb/run-20250206_135445-g1sbdh9g/run-g1sbdh9g.wandb
+2025-02-06 14:08:15,342 INFO    SenderThread:15995 [sender.py:finish():1526] shutting down sender
+2025-02-06 14:08:15,342 INFO    SenderThread:15995 [file_pusher.py:finish():159] shutting down file pusher
+2025-02-06 14:08:15,342 INFO    SenderThread:15995 [file_pusher.py:join():164] waiting for file pusher
