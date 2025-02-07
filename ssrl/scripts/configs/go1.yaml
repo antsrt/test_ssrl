@@ -59,9 +59,9 @@ env_sac:
   turn_cmd_rate_range: [-0.0, 0.0]
   initial_yaw_range: [-0.0, 0.0]
   contact_time_const: 0.02
-  # contact_time_const_range: [0.01, 0.30]
+  contact_time_const_range: [0.01, 0.30]
   contact_damping_ratio: 1.0
-  friction_range: [0.6, 0.6]
+  friction_range: [0.6, 1.2]
   ground_roll_range: [0.0, 0.0]
   ground_pitch_range: [0.0, 0.0]
   joint_damping_perc_range: [1.0, 1.0]

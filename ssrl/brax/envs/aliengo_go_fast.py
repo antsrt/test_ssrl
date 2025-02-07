@@ -276,10 +276,10 @@ class Go1GoFast(RlwamEnv):
         self._ac_Kd_idxs = jp.s_[21:33]
 
         # define action space
-        dx = 0.2
-        dy = 0.1
-        dKp = 30.0
-        dKd = 2.0
+        dx = 0.25
+        dy = 0.125
+        dKp = 35.0
+        dKd = 3.0
         self._ac_space = jp.ones((self.action_size, 2))
         self._ac_space = self._ac_space.at[:, 0].set(-1.)
         self._ac_space = self._ac_space.at[self._ac_delta_pdes_x_idxs, 0].set(-dx)
@@ -1055,7 +1055,7 @@ class Go1GoFast(RlwamEnv):
         gait_params = Go1GaitParams(
             period=self._period,
             r=0.5,
-            swing_h=0.08,
+            swing_h=0.085,
             dbody_h=dbody_h,
             bias=jp.array([0.0, 0.5, 0.5, 0.0])
         )
@@ -1083,8 +1083,8 @@ class Go1GoFast(RlwamEnv):
                         jp.tile(Go1Utils.UPPER_JOINT_LIMITS, 4))
         qd_des = jp.zeros((12,))
         mult = 1.4
-        Kp = jp.tile(jp.array([80, 80, 80]), 4) * mult
-        Kd = jp.tile(jp.array([2.5, 2.5, 2.5]), 4)
+        Kp = jp.tile(jp.array([85, 85, 85]), 4) * mult
+        Kd = jp.tile(jp.array([3.0, 3.0, 3.0]), 4)
 
         if self._gains_in_action_space:
             Kp += action[self._ac_Kp_idxs]

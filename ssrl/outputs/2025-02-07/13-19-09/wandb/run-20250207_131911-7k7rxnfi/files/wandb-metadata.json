@@ -1,0 +1,107 @@
+{
+    "os": "Linux-6.8.0-52-generic-x86_64-with-glibc2.39",
+    "python": "3.9.21",
+    "heartbeatAt": "2025-02-07T10:19:13.216804",
+    "startedAt": "2025-02-07T10:19:11.996619",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "render_epoch_interval=1"
+    ],
+    "state": "running",
+    "program": "/home/ant/ssrl/ssrl/scripts/aliengo_train.py",
+    "codePath": "ssrl/scripts/aliengo_train.py",
+    "git": {
+        "remote": "git@github.com:antsrt/test_ssrl.git",
+        "commit": "b7cb84e98e63d0ef401eb4009d204b6278f32e0e"
+    },
+    "email": "an.tsaritsin@gamil.com",
+    "root": "/home/ant/ssrl",
+    "host": "hellmachine",
+    "username": "ant",
+    "executable": "/home/ant/miniforge3/envs/ssrl/bin/python",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 3212.5750000000003,
+        "min": 400.0,
+        "max": 4603.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 4316.896,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 4327.013,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 4316.842,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 2176.313,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 4313.858,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 4315.867,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 4311.199,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 4312.782,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 4218.602,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 3366.744,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 4316.002,
+            "min": 400.0,
+            "max": 4603.0
+        },
+        {
+            "current": 400.0,
+            "min": 400.0,
+            "max": 4603.0
+        }
+    ],
+    "disk": {
+        "total": 114.6000747680664,
+        "used": 87.74680709838867
+    },
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "memory_total": 8585740288
+        }
+    ],
+    "memory": {
+        "total": 14.831596374511719
+    }
+}
